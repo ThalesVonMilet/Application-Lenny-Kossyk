@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 // Project imports:
 import 'package:crypto_ui_web/constant/color.dart';
 
-class NinthSection extends StatefulWidget {
-  const NinthSection({super.key});
+class BottomLine extends StatefulWidget {
+  const BottomLine({super.key});
 
   @override
-  State<NinthSection> createState() => _NinthSectionState();
+  State<BottomLine> createState() => _BottomLineState();
 }
 
-class _NinthSectionState extends State<NinthSection> {
+class _BottomLineState extends State<BottomLine> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -40,7 +40,7 @@ class _NinthSectionState extends State<NinthSection> {
                       height: 15,
                     ),
                     const Text(
-                      'Lorem ipsum dolor sit amet consectetur. \nFusce nisl lacus elementum neque.',
+                      '',//'Lorem ipsum dolor sit amet consectetur. \nFusce nisl lacus elementum neque.',
                       style: TextStyle(
                         fontFamily: 'CH',
                         fontSize: 12,
@@ -53,7 +53,7 @@ class _NinthSectionState extends State<NinthSection> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Contact Us',
+                      'Contact Me',
                       style: TextStyle(
                         fontFamily: 'CH',
                         fontSize: 12,
@@ -67,7 +67,7 @@ class _NinthSectionState extends State<NinthSection> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          '(524) 333 6565',
+                          '+49 159 06417160',
                           style: TextStyle(
                             fontFamily: 'CH',
                             fontSize: 12,
@@ -75,7 +75,7 @@ class _NinthSectionState extends State<NinthSection> {
                           ),
                         ),
                         Text(
-                          'example@email.com',
+                          'lenkossyk@gmail.com',
                           style: TextStyle(
                             fontFamily: 'CH',
                             fontSize: 12,

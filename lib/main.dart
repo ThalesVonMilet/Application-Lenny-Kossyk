@@ -8,6 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 // Project imports:
 import 'package:crypto_ui_web/bloc/screen_offset.dart';
 import 'package:crypto_ui_web/constant/color.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'motivation_letter/motivation_letter.dart';
 
 void main() {
@@ -31,7 +32,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         useMaterial3: true,
+        //textTheme: GoogleFonts.robotoCondensedTextTheme(),
       ),
+      debugShowCheckedModeBanner: false,
       home: const MyHomePage(),
     );
   }

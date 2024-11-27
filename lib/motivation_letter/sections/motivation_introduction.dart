@@ -93,7 +93,9 @@ class _MotivationIntroductionState extends State<MotivationIntroduction>
         return Flexible(
           flex: 1,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50),
+            padding: const EdgeInsets.symmetric(
+                vertical: 50,
+                horizontal: 50),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -114,19 +116,6 @@ class _MotivationIntroductionState extends State<MotivationIntroduction>
                     ),
                   ),
                 ),
-                /*TextReveal(
-                  maxHeight: 50,
-                  controller: controller,
-                  child: const Text(
-                    'of Your Choice',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontFamily: 'CH',
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),*/
                 const SizedBox(
                   height: 30,
                 ),
@@ -134,7 +123,7 @@ class _MotivationIntroductionState extends State<MotivationIntroduction>
                   position: transform,
                   // opacity: subTextOpacityAnimation,
                   child: const Text(
-                    'From an early age, even before I turned 15, I wanted to do something with innovation—the desire to create something transformative, something that did not exist before I worked on it. This passion has shaped my goals and is the reason I chose to study Energy Process Engineering. This field is not only rich with opportunities but also holds the key to addressing some of the world’s most pressing challenges, particularly in the transition toward sustainable solutions.My love for natural sciences, especially engineering, stems from their ability to turn ideas into impactful realities. For me, engineering is the perfect way to bring about meaningful change—merging creativity, problem-solving, and practical application to improve lives and push the boundaries of what is possible. A particularly fascinating example that inspires me is the concept of foldable robots. Their compact, self-assembling design makes them ideal for space missions, where space and weight efficiency are critical. But not only that, they could be used for underwater research or in general for tough environments where current robots fail. ',
+                    'From an early age, even before I turned 15, I wanted to do something with innovation—the desire to create something transformative, something that did not exist before I worked on it. This passion has shaped my goals and is the reason I chose to study Energy Process Engineering. This field is not only rich with opportunities but also holds the key to addressing some of the world’s most pressing challenges, particularly in the transition toward sustainable solutions.My love for natural sciences, especially engineering, stems from their ability to turn ideas into impactful realities.',
                     style: TextStyle(
                       fontFamily: 'CH',
                       fontSize: 18,
@@ -146,29 +135,19 @@ class _MotivationIntroductionState extends State<MotivationIntroduction>
                 const SizedBox(
                   height: 30,
                 ),
-                /*TextReveal(
-                  maxHeight: 50,
-                  controller: controller,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(100, 50),
-                      backgroundColor: AppColors.scaffoldColor,
-                      side: const BorderSide(
-                        width: 0.5,
-                        color: AppColors.secondaryColor,
-                      ),
-                    ),
-                    onPressed: () {},
-                    child: const Text(
-                      'Learn More',
-                      style: TextStyle(
-                          fontFamily: 'CH',
-                          fontSize: 12,
-                          fontWeight: FontWeight.w200,
-                          color: AppColors.secondaryColor),
+                SlideTransition(
+                  position: transform,
+                  // opacity: subTextOpacityAnimation,
+                  child: const Text(
+                    'For me, engineering is the perfect way to bring about meaningful change—merging creativity, problem-solving, and practical application to improve lives and push the boundaries of what is possible. A particularly fascinating example that inspires me is the concept of foldable robots. Their compact, self-assembling design makes them ideal for space missions, where space and weight efficiency are critical. But not only that, they could be used for underwater research or in general for tough environments where current robots fail. ',
+                    style: TextStyle(
+                      fontFamily: 'CH',
+                      fontSize: 18,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w200,
                     ),
                   ),
-                )*/
+                ),
               ],
             ),
           ),
