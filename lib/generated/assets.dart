@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String assetsImagesLamp1 = 'assets/images/lamp_1.png';
   static const String fontsClashDisplayBold = 'assets/fonts/ClashDisplay-Bold.ttf';
   static const String fontsClashDisplayExtralight = 'assets/fonts/ClashDisplay-Extralight.ttf';
   static const String fontsClashDisplayLight = 'assets/fonts/ClashDisplay-Light.ttf';
@@ -22,7 +23,7 @@ class Assets {
   static const String imagesItem4 = 'assets/images/item4.png';
   static const String imagesItem5 = 'assets/images/item5.png';
   static const String imagesItem6 = 'assets/images/item6.png';
-  static const String imagesLamp1 = 'assets/images/lamp_1.png';
+  static const String imagesLamp1 = 'assets/images/lamp1.gif';
   static const String imagesLamp1Rb = 'assets/images/lamp_1_rb.png';
   static const String imagesLogo1 = 'assets/images/Logo1.png';
   static const String imagesLogo2 = 'assets/images/Logo2.png';

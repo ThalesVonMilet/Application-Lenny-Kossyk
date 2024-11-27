@@ -86,8 +86,9 @@ class _ThirdSectionState extends State<ThirdSection>
           controller.reverse();
         }
         return Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Flexible(
+            /*Flexible(
               flex: 1,
               child: SlideTransition(
                 position: offsetImage,
@@ -98,7 +99,7 @@ class _ThirdSectionState extends State<ThirdSection>
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.1,
-            ),
+            ),*/
             Flexible(
               flex: 1,
               child: Column(
@@ -106,7 +107,7 @@ class _ThirdSectionState extends State<ThirdSection>
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       TextReveal(
                         maxHeight: 50,
