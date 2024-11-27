@@ -54,17 +54,17 @@ class _FirstSectionState extends State<FirstSection>
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 800,
+      height: 1450,
       decoration: const BoxDecoration(color: AppColors.scaffoldColor),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Expanded(
             flex: 5,
             child: Padding(
-              padding: const EdgeInsets.only(left: 90, top: 200),
+              padding: const EdgeInsets.only(left: 90, top: 160),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   TextReveal(
                     maxHeight: 100,
@@ -72,7 +72,7 @@ class _FirstSectionState extends State<FirstSection>
                     textOpacityAnimation: textOpacityAnimation,
                     textRevealAnimation: textRevealAnimation,
                     child: const Text(
-                      'Trusted Crypto',
+                      'Welcome to the application',
                       style: TextStyle(
                           fontFamily: 'CH',
                           fontSize: 45,
@@ -86,7 +86,21 @@ class _FirstSectionState extends State<FirstSection>
                     textOpacityAnimation: textOpacityAnimation,
                     textRevealAnimation: textRevealAnimation,
                     child: const Text(
-                      'Preservation',
+                      'of Lenny Kossyk for',
+                      style: TextStyle(
+                          fontFamily: 'CH',
+                          fontSize: 45,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w800),
+                    ),
+                  ),
+                  TextReveal(
+                    maxHeight: 100,
+                    controller: controller,
+                    textOpacityAnimation: textOpacityAnimation,
+                    textRevealAnimation: textRevealAnimation,
+                    child: const Text(
+                      'Development of magnetic self-folding robots',
                       style: TextStyle(
                           fontFamily: 'CH',
                           fontSize: 45,
@@ -103,7 +117,8 @@ class _FirstSectionState extends State<FirstSection>
                     textOpacityAnimation: textOpacityAnimation,
                     //textRevealAnimation: textRevealAnimation,
                     child: const Text(
-                      'Lorem ipsum dolor sit amet consectetur. Duis morbi scelerisque lectus sodales rhoncus.',
+                      '',
+                      //'Lorem ipsum dolor sit amet consectetur. Duis morbi scelerisque lectus sodales rhoncus.',
                       style: TextStyle(
                           fontFamily: 'CH',
                           fontSize: 13,
@@ -115,14 +130,15 @@ class _FirstSectionState extends State<FirstSection>
                     height: 20,
                   ),
                   Row(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                            fixedSize: const Size(150, 50),
+                            fixedSize: const Size(200, 50),
                             backgroundColor: AppColors.secondaryColor),
                         child: const Text(
-                          'Get Started',
+                          'List of courses',
                           style: TextStyle(
                             fontFamily: 'CH',
                             fontSize: 13,
@@ -132,17 +148,17 @@ class _FirstSectionState extends State<FirstSection>
                         ),
                       ),
                       const SizedBox(
-                        width: 10,
+                        width: 25,
                       ),
                       ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                            fixedSize: const Size(150, 50),
+                            fixedSize: const Size(200, 50),
                             backgroundColor: Colors.transparent,
                             side: const BorderSide(
                                 color: AppColors.secondaryColor)),
                         child: const Text(
-                          'Learn more',
+                          'Motivation letter',
                           style: TextStyle(
                             fontFamily: 'CH',
                             fontSize: 13,
@@ -150,14 +166,54 @@ class _FirstSectionState extends State<FirstSection>
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                      )
+                      ),
+                      const SizedBox(
+                        width: 25,
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                            fixedSize: const Size(200, 50),
+                            backgroundColor: AppColors.secondaryColor),
+                        child: const Text(
+                          'Curriculum vitae',
+                          style: TextStyle(
+                            fontFamily: 'CH',
+                            fontSize: 13,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 25,
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                            fixedSize: const Size(200, 50),
+                            backgroundColor: AppColors.secondaryColor),
+                        child: const Text(
+                          'Transcript of records',
+                          style: TextStyle(
+                            fontFamily: 'CH',
+                            fontSize: 13,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 25,
+                      ),
                     ],
-                  )
+                  ),
+                  FirstPageImage()
                 ],
               ),
             ),
           ),
-          const Expanded(flex: 9, child: FirstPageImage())
+          //const Expanded(flex: 9, child: FirstPageImage())
         ],
       ),
     );
@@ -203,7 +259,7 @@ class _FirstPageImageState extends State<FirstPageImage>
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedBuilder(
+    return FadeInImage(
       animation: _animation,
       builder: (context, child) {
         return Stack(
@@ -233,11 +289,12 @@ class _FirstPageImageState extends State<FirstPageImage>
           ],
         );
       },
+      placeholder: null,
       child: Transform.scale(
         scale: 1,
         child: Image.asset(
-          'assets/images/Frame 27.png',
-          fit: BoxFit.cover,
+          'assets/images/lamp_1_rb.png',
+          fit: BoxFit.contain,
         ),
       ),
     );

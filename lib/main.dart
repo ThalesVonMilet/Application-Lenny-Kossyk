@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         useMaterial3: true,
+        //colorScheme:
       ),
       home: const MyHomePage(),
     );
@@ -36,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      /*appBar: AppBar(
         leadingWidth: 420,
         backgroundColor: AppColors.scaffoldColor,
         leading: Padding(
@@ -120,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           )
         ],
-      ),
+      ),*/
       backgroundColor: AppColors.scaffoldColor,
       body: BlocProvider(
         create: (context) => DisplayOffset(ScrollOffset(scrollOffsetValue: 0)),
