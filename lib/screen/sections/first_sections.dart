@@ -60,9 +60,8 @@ class _FirstSectionState extends State<FirstSection>
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 2000,
       width: double.infinity,
-      decoration: BoxDecoration(color: Color.fromARGB(255, 136,137,144)
+      decoration: BoxDecoration(color: Color.fromARGB(255,166,166,168) //Color.fromARGB(255, 136,137,144)
       //bottom const BoxDecoration(color: Color.fromARGB(255,166,166,168)
       //AppColors.scaffoldColor
       ),
@@ -123,7 +122,8 @@ class _FirstSectionState extends State<FirstSection>
               textOpacityAnimation: textOpacityAnimation,
               //textRevealAnimation: textRevealAnimation,
               child: const Text(
-                '',
+                // TODO change Name
+                'Dear Prof Mrs. Yang this website is my application',
                 //'Lorem ipsum dolor sit amet consectetur. Duis morbi scelerisque lectus sodales rhoncus.',
                 style: TextStyle(
                     fontFamily: 'CH',
@@ -215,26 +215,9 @@ class _FirstSectionState extends State<FirstSection>
               ],
             ),
             const SizedBox(
-              height: 20,
+              height: 50,
             ),
-            Flexible(
-              child: SizedBox(
-                width: double.infinity,
-                child: Gif(
-                  fit: BoxFit.cover,
-                  image: AssetImage("assets/images/lamp1.gif"),
-                  controller: _controller, // if duration and fps is null, original gif fps will be used.
-                  //fps: 30,
-                  //duration: const Duration(seconds: 3),
-                  autostart: Autostart.no,
-                  placeholder: (context) => const Text('Loading...'),
-                  onFetchCompleted: () {
-                    _controller.reset();
-                    _controller.forward();
-                  },
-                ),
-              ),
-            ),
+
           ],
         ),
       ),

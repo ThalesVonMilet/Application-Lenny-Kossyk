@@ -85,117 +85,88 @@ class _ThirdSectionState extends State<ThirdSection>
         } else {
           controller.reverse();
         }
-        return Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            /*Flexible(
-              flex: 1,
-              child: SlideTransition(
-                position: offsetImage,
-                child: Image.asset(
-                  'assets/images/Frame 29.png',
+        return Flexible(
+          flex: 1,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 50),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                const SizedBox(
+                  height: 10,
                 ),
-              ),
+                TextReveal(
+                  maxHeight: 50,
+                  controller: controller,
+                  child: const Text(
+                    'What motivates me',
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontFamily: 'CH',
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                /*TextReveal(
+                  maxHeight: 50,
+                  controller: controller,
+                  child: const Text(
+                    'of Your Choice',
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontFamily: 'CH',
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),*/
+                const SizedBox(
+                  height: 30,
+                ),
+                SlideTransition(
+                  position: transform,
+                  // opacity: subTextOpacityAnimation,
+                  child: const Text(
+                    'From an early age, even before I turned 15, I wanted to do something with innovation—the desire to create something transformative, something that did not exist before I worked on it. This passion has shaped my goals and is the reason I chose to study Energy Process Engineering. This field is not only rich with opportunities but also holds the key to addressing some of the world’s most pressing challenges, particularly in the transition toward sustainable solutions.My love for natural sciences, especially engineering, stems from their ability to turn ideas into impactful realities. For me, engineering is the perfect way to bring about meaningful change—merging creativity, problem-solving, and practical application to improve lives and push the boundaries of what is possible. A particularly fascinating example that inspires me is the concept of foldable robots. Their compact, self-assembling design makes them ideal for space missions, where space and weight efficiency are critical. But not only that, they could be used for underwater research or in general for tough environments where current robots fail. ',
+                    style: TextStyle(
+                      fontFamily: 'CH',
+                      fontSize: 18,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w200,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                /*TextReveal(
+                  maxHeight: 50,
+                  controller: controller,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(100, 50),
+                      backgroundColor: AppColors.scaffoldColor,
+                      side: const BorderSide(
+                        width: 0.5,
+                        color: AppColors.secondaryColor,
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: const Text(
+                      'Learn More',
+                      style: TextStyle(
+                          fontFamily: 'CH',
+                          fontSize: 12,
+                          fontWeight: FontWeight.w200,
+                          color: AppColors.secondaryColor),
+                    ),
+                  ),
+                )*/
+              ],
             ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.1,
-            ),*/
-            Flexible(
-              flex: 1,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      TextReveal(
-                        maxHeight: 50,
-                        controller: controller,
-                        child: const Text(
-                          'About us',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontFamily: 'CH',
-                            fontWeight: FontWeight.normal,
-                            color: AppColors.secondaryColor,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      TextReveal(
-                        maxHeight: 50,
-                        controller: controller,
-                        child: const Text(
-                          'Crypto Saving Base',
-                          style: TextStyle(
-                            fontSize: 30,
-                            fontFamily: 'CH',
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                      TextReveal(
-                        maxHeight: 50,
-                        controller: controller,
-                        child: const Text(
-                          'of Your Choice',
-                          style: TextStyle(
-                            fontSize: 30,
-                            fontFamily: 'CH',
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                      SlideTransition(
-                        position: transform,
-                        // opacity: subTextOpacityAnimation,
-                        child: const Text(
-                          'Lorem ipsum dolor sit amet. Vel blanditiis modi eos accusamus cupiditate ut sint quaerat. Sit autem rerum qui vitae dolores cum eveniet eveniet vel sunt sunt eum reiciendis rerum aut voluptatem minus.',
-                          style: TextStyle(
-                            fontFamily: 'CH',
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w200,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                      TextReveal(
-                        maxHeight: 50,
-                        controller: controller,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            minimumSize: const Size(100, 50),
-                            backgroundColor: AppColors.scaffoldColor,
-                            side: const BorderSide(
-                              width: 0.5,
-                              color: AppColors.secondaryColor,
-                            ),
-                          ),
-                          onPressed: () {},
-                          child: const Text(
-                            'Learn More',
-                            style: TextStyle(
-                                fontFamily: 'CH',
-                                fontSize: 12,
-                                fontWeight: FontWeight.w200,
-                                color: AppColors.secondaryColor),
-                          ),
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ),
-          ],
+          ),
         );
       },
     );
