@@ -51,7 +51,7 @@ class _FirstSectionState extends State<FirstSection> with TickerProviderStateMix
   }
 
   Widget _title(String text) => TitleWidget(
-        padding: const EdgeInsets.only(bottom: 14),
+        padding: const EdgeInsets.only(bottom: 8),
         controller: controller,
         text: text,
         textOpacityAnimation: textOpacityAnimation,
@@ -130,7 +130,7 @@ class _FirstSectionState extends State<FirstSection> with TickerProviderStateMix
               ],
             ),
             const SizedBox(
-              height: 50,
+              height: 90,
             ),
           ],
         ),
