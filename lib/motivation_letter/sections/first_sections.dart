@@ -1,9 +1,13 @@
-import 'package:crypto_ui_web/constant/color.dart';
-import 'package:crypto_ui_web/screen/widget/text_transform.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:gif/gif.dart';
 
+// Project imports:
+import 'package:crypto_ui_web/constant/color.dart';
 import '../widget/text_reveal.dart';
+import '../widget/text_transform.dart';
 
 class FirstSection extends StatefulWidget {
   const FirstSection({super.key});
@@ -61,7 +65,7 @@ class _FirstSectionState extends State<FirstSection>
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      decoration: BoxDecoration(color: Color.fromARGB(255,166,166,168) //Color.fromARGB(255, 136,137,144)
+      decoration: const BoxDecoration(color: Color.fromARGB(255,166,166,168) //Color.fromARGB(255, 136,137,144)
       //bottom const BoxDecoration(color: Color.fromARGB(255,166,166,168)
       //AppColors.scaffoldColor
       ),
@@ -265,6 +269,7 @@ class _FirstPageImageState extends State<FirstPageImage>
   @override
   Widget build(BuildContext context) {
     return FadeTransition(
+      opacity: _animation,
       child: Stack(
         children: [
           Container(
@@ -297,7 +302,6 @@ class _FirstPageImageState extends State<FirstPageImage>
           ),*/
         ],
       ),
-      opacity: _animation,
     );
   }
 }

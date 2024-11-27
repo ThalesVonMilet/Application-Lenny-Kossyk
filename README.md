@@ -12,6 +12,9 @@ This Flutter web application is designed to provide users with a sleek and inter
 - HTML
 - CSS
 
+flutter pub run import_sorter:main
+dart fix --apply
+
 ## Features
 - Crypto UI: Displays cryptocurrency data in a visually appealing manner.
 - Smooth Scrolling: Utilizes pure animations for seamless navigation.

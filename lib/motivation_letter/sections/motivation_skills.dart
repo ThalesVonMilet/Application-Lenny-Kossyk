@@ -1,24 +1,26 @@
+// Flutter imports:
+// Project imports:
 import 'package:crypto_ui_web/bloc/screen_offset.dart';
-import 'package:crypto_ui_web/constant/color.dart';
-import 'package:crypto_ui_web/screen/widget/text_reveal.dart';
 import 'package:flutter/material.dart';
+// Package imports:
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ThirdSection extends StatefulWidget {
-  const ThirdSection({super.key});
+import '../widget/text_reveal.dart';
+
+class MotivationSkills extends StatefulWidget {
+  const MotivationSkills({super.key});
 
   @override
-  State<ThirdSection> createState() => _ThirdSectionState();
+  State<MotivationSkills> createState() => _MotivationSkillsState();
 }
 
-class _ThirdSectionState extends State<ThirdSection>
+class _MotivationSkillsState extends State<MotivationSkills>
     with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation<double> imageRevealAnimation;
   late Animation<double> textRevealAnimation;
   late Animation<double> subTextOpacityAnimation;
   late Animation<double> subImageRevealAnimation;
-  late Animation<Offset> offsetImage;
   late Animation<Offset> transform;
 
   @override
@@ -47,9 +49,7 @@ class _ThirdSectionState extends State<ThirdSection>
         CurvedAnimation(
             parent: controller,
             curve: const Interval(0.50, 0.80, curve: Curves.easeOut)));
-    offsetImage =
-        Tween<Offset>(begin: const Offset(-1, 0), end: const Offset(0, 0))
-            .animate(CurvedAnimation(parent: controller, curve: Curves.ease));
+
     transform =
         Tween<Offset>(begin: const Offset(10, 0), end: const Offset(0, 0))
             .animate(CurvedAnimation(parent: controller, curve: Curves.ease));
@@ -68,6 +68,20 @@ class _ThirdSectionState extends State<ThirdSection>
     controller.dispose();
     super.dispose();
   }
+
+  Widget _title(String text) => TextReveal(
+        maxHeight: 50,
+        controller: controller,
+        child: Text(
+          text,
+          style: const TextStyle(
+            fontSize: 30,
+            fontFamily: 'CH',
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +102,7 @@ class _ThirdSectionState extends State<ThirdSection>
         return Flexible(
           flex: 1,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 50),
+            padding: const EdgeInsets.symmetric(horizontal: 50),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -96,19 +110,7 @@ class _ThirdSectionState extends State<ThirdSection>
                 const SizedBox(
                   height: 10,
                 ),
-                TextReveal(
-                  maxHeight: 50,
-                  controller: controller,
-                  child: const Text(
-                    'What motivates me',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontFamily: 'CH',
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
+                _title('Why would I be a good fit for this project ?'),
                 /*TextReveal(
                   maxHeight: 50,
                   controller: controller,
@@ -125,11 +127,27 @@ class _ThirdSectionState extends State<ThirdSection>
                 const SizedBox(
                   height: 30,
                 ),
+                TextReveal(
+                  maxHeight: 50,
+                  controller: controller,
+                  child: const Text(
+                    'Electrical Engineering: ',
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontFamily: 'CH',
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
                 SlideTransition(
                   position: transform,
                   // opacity: subTextOpacityAnimation,
                   child: const Text(
-                    'From an early age, even before I turned 15, I wanted to do something with innovation—the desire to create something transformative, something that did not exist before I worked on it. This passion has shaped my goals and is the reason I chose to study Energy Process Engineering. This field is not only rich with opportunities but also holds the key to addressing some of the world’s most pressing challenges, particularly in the transition toward sustainable solutions.My love for natural sciences, especially engineering, stems from their ability to turn ideas into impactful realities. For me, engineering is the perfect way to bring about meaningful change—merging creativity, problem-solving, and practical application to improve lives and push the boundaries of what is possible. A particularly fascinating example that inspires me is the concept of foldable robots. Their compact, self-assembling design makes them ideal for space missions, where space and weight efficiency are critical. But not only that, they could be used for underwater research or in general for tough environments where current robots fail. ',
+                    ' I have a solid foundation in electrical engineering, having passed my electrical exam with distinction. In addition, I completed an electrical engineering course, further deepening my understanding of the field. ',
                     style: TextStyle(
                       fontFamily: 'CH',
                       fontSize: 18,

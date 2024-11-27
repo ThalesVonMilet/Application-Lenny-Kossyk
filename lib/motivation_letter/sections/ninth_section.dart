@@ -1,5 +1,8 @@
-import 'package:crypto_ui_web/constant/color.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
+import 'package:crypto_ui_web/constant/color.dart';
 
 class NinthSection extends StatefulWidget {
   const NinthSection({super.key});

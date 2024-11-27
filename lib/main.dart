@@ -1,12 +1,24 @@
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// Project imports:
 import 'package:crypto_ui_web/bloc/screen_offset.dart';
 import 'package:crypto_ui_web/constant/color.dart';
-import 'package:crypto_ui_web/screen/whole_screen.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'motivation_letter/motivation_letter.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    // For widgets to be able to read providers, we need to wrap the entire
+    // application in a "ProviderScope" widget.
+    // This is where the state of our providers will be stored.
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -124,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: AppColors.scaffoldColor,
       body: BlocProvider(
         create: (context) => DisplayOffset(ScrollOffset(scrollOffsetValue: 0)),
-        child: const WholeScreen(),
+        child: const MotivationLetter(),
       ),
     );
   }

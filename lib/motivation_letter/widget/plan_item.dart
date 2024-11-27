@@ -1,5 +1,8 @@
-import 'package:crypto_ui_web/constant/color.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
+import 'package:crypto_ui_web/constant/color.dart';
 
 Widget planCard(Animation<double> planAnimation, Color textColor,
     Color containerColor, Color borderColor, String text, String price) {
@@ -27,7 +30,7 @@ Widget planCard(Animation<double> planAnimation, Color textColor,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Text(
@@ -39,7 +42,7 @@ Widget planCard(Animation<double> planAnimation, Color textColor,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           SizedBox(

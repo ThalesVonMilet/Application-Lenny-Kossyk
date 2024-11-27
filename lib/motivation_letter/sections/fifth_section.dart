@@ -1,18 +1,24 @@
-import 'package:crypto_ui_web/bloc/screen_offset.dart';
-import 'package:crypto_ui_web/constant/color.dart';
-import 'package:crypto_ui_web/screen/widget/plan_item.dart';
-import 'package:crypto_ui_web/screen/widget/text_reveal.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class FifthSection extends StatefulWidget {
-  const FifthSection({super.key});
+// Project imports:
+import 'package:crypto_ui_web/bloc/screen_offset.dart';
+import 'package:crypto_ui_web/constant/color.dart';
+
+import '../widget/plan_item.dart';
+import '../widget/text_reveal.dart';
+
+class MotivationFuture extends StatefulWidget {
+  const MotivationFuture({super.key});
 
   @override
-  State<FifthSection> createState() => _FifthSectionState();
+  State<MotivationFuture> createState() => _MotivationFutureState();
 }
 
-class _FifthSectionState extends State<FifthSection>
+class _MotivationFutureState extends State<MotivationFuture>
     with TickerProviderStateMixin {
   late AnimationController controller;
   late Animation<double> imageRevealAnimation;

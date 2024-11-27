@@ -1,9 +1,13 @@
-import 'package:crypto_ui_web/constant/color.dart';
-import 'package:crypto_ui_web/screen/widget/text_reveal.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+// Project imports:
+import 'package:crypto_ui_web/constant/color.dart';
 import '../../bloc/screen_offset.dart';
+import '../widget/text_reveal.dart';
 
 class SeventhSection extends StatefulWidget {
   const SeventhSection({super.key});

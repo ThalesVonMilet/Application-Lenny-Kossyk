@@ -1,6 +1,11 @@
-import 'package:crypto_ui_web/bloc/screen_offset.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+// Project imports:
+import 'package:crypto_ui_web/bloc/screen_offset.dart';
 
 class ItemCard extends StatefulWidget {
   final String image;
@@ -73,7 +78,7 @@ class _ItemCardState extends State<ItemCard>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 345,
       width: 400,
       child: BlocBuilder<DisplayOffset, ScrollOffset>(

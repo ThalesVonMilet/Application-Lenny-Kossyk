@@ -1,9 +1,14 @@
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+// Project imports:
 import 'package:crypto_ui_web/bloc/screen_offset.dart';
 import 'package:crypto_ui_web/constant/color.dart';
-import 'package:crypto_ui_web/screen/widget/image_reveal.dart';
-import 'package:crypto_ui_web/screen/widget/text_reveal.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../widget/image_reveal.dart';
 
 class SecondScreen extends StatefulWidget {
   const SecondScreen({super.key});
@@ -14,6 +19,7 @@ class SecondScreen extends StatefulWidget {
 
 class _SecondScreenState extends State<SecondScreen>
     with TickerProviderStateMixin {
+  @override
   void initState() {
     controller = AnimationController(
       vsync: this,

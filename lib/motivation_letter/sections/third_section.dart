@@ -1,17 +1,22 @@
-import 'package:crypto_ui_web/bloc/screen_offset.dart';
-import 'package:crypto_ui_web/constant/color.dart';
-import 'package:crypto_ui_web/screen/widget/text_reveal.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ForthSection extends StatefulWidget {
-  const ForthSection({super.key});
+// Project imports:
+import 'package:crypto_ui_web/bloc/screen_offset.dart';
+
+import '../widget/text_reveal.dart';
+
+class MotivationIntroduction extends StatefulWidget {
+  const MotivationIntroduction({super.key});
 
   @override
-  State<ForthSection> createState() => _ForthSectionState();
+  State<MotivationIntroduction> createState() => _MotivationIntroductionState();
 }
 
-class _ForthSectionState extends State<ForthSection>
+class _MotivationIntroductionState extends State<MotivationIntroduction>
     with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation<double> imageRevealAnimation;
@@ -88,7 +93,7 @@ class _ForthSectionState extends State<ForthSection>
         return Flexible(
           flex: 1,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 50),
+            padding: const EdgeInsets.symmetric(horizontal: 50),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -100,7 +105,7 @@ class _ForthSectionState extends State<ForthSection>
                   maxHeight: 50,
                   controller: controller,
                   child: const Text(
-                    'Why would I be a good fit for this project ?',
+                    'What motivates me',
                     style: TextStyle(
                       fontSize: 30,
                       fontFamily: 'CH',

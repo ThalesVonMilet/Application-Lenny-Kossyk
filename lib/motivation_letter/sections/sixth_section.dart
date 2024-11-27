@@ -1,11 +1,15 @@
-import 'package:crypto_ui_web/bloc/screen_offset.dart';
-import 'package:crypto_ui_web/model/news.dart';
-import 'package:crypto_ui_web/screen/widget/news_card.dart';
-import 'package:crypto_ui_web/screen/widget/text_reveal.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+// Project imports:
+import 'package:crypto_ui_web/bloc/screen_offset.dart';
+import 'package:crypto_ui_web/model/news.dart';
 import '../../constant/color.dart';
+import '../widget/news_card.dart';
+import '../widget/text_reveal.dart';
 
 class SixthSection extends StatefulWidget {
   const SixthSection({super.key});
@@ -39,6 +43,7 @@ class _SixthSectionState extends State<SixthSection>
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
