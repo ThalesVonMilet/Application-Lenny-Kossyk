@@ -18,7 +18,7 @@ class _GifWidgetState extends State<GifWidget> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 500,
-      width: 500,
+      width: double.infinity,
       child: Gif(
         fit: BoxFit.contain,
         image: const AssetImage("assets/images/lamp2.gif"),

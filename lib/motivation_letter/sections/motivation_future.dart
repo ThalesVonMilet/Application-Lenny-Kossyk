@@ -76,50 +76,45 @@ class _MotivationFutureState extends State<MotivationFuture> with TickerProvider
         } else {
           controller.reverse();
         }
-        return Flexible(
-          flex: 1,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 50),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                const SizedBox(
-                  height: 10,
-                ),
-                TitleWidget(controller: controller, text: 'For the future'),
-                /*TextReveal(
-                  maxHeight: 50,
-                  controller: controller,
-                  child: const Text(
-                    'of Your Choice',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontFamily: 'CH',
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),*/
-                const SizedBox(
-                  height: 30,
-                ),
-                LongTextBlockWidget(
-                    text:
-                        'For the future I hope to gather as much knowledge as possible. Especially in learning how to think abstractly, where this internship will for certain assist me at. In the long run I want to do something better, how I will achieve this I don’t know now but I want to create my own Company one day. ',
-                    transform: transform),
-                LongTextBlockWidget(
-                    text:
-                        'I am excited about the opportunity to contribute to your project and am confident that my technical expertise, creativity, and passion make me a valuable addition to your team. I look forward to working with you and helping to bring innovation to life.',
-                    transform: transform),
-                LongTextBlockWidget(
-                    text:
-                        'Thank you for considering my application. Please feel free to contact me at [Your Email Address] or [Your Phone Number] if you would like to discuss my qualifications further. ',
-                    transform: transform),
-                spaceUndernethSection
-              ],
+        return Flex(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          direction: Axis.vertical,
+          children: [
+            const SizedBox(
+              height: 10,
             ),
-          ),
+            TitleWidget(controller: controller, text: 'For the future'),
+            /*TextReveal(
+              maxHeight: 50,
+              controller: controller,
+              child: const Text(
+                'of Your Choice',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontFamily: 'CH',
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ),*/
+            const SizedBox(
+              height: 30,
+            ),
+            LongTextBlockWidget(
+                text:
+                    'For the future I hope to gather as much knowledge as possible. Especially in learning how to think abstractly, where this internship will for certain assist me at. In the long run I want to do something better, how I will achieve this I don’t know now but I want to create my own Company one day. ',
+                transform: transform),
+            LongTextBlockWidget(
+                text:
+                    'I am excited about the opportunity to contribute to your project and am confident that my technical expertise, creativity, and passion make me a valuable addition to your team. I look forward to working with you and helping to bring innovation to life.',
+                transform: transform),
+            LongTextBlockWidget(
+                text:
+                    'Thank you for considering my application. Please feel free to contact me at [Your Email Address] or [Your Phone Number] if you would like to discuss my qualifications further. ',
+                transform: transform),
+            spaceUndernethSection
+          ],
         );
       },
     );

@@ -18,6 +18,7 @@ class _BottomLineState extends State<BottomLine> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.08),
       width: MediaQuery.of(context).size.width,
       decoration: const BoxDecoration(
         border: Border(
