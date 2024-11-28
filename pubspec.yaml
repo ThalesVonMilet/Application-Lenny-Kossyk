@@ -42,6 +42,7 @@ dependencies:
   riverpod_annotation: ^2.6.1
   import_sorter: ^4.6.0
   dart_format: ^1.1.20
+  model_viewer_plus: ^1.9.1
 
 dev_dependencies:
   flutter_test:

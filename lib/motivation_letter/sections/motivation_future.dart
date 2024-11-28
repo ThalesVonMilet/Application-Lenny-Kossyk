@@ -1,6 +1,7 @@
 // Flutter imports:
 // Project imports:
 import 'package:crypto_ui_web/bloc/screen_offset.dart';
+import 'package:crypto_ui_web/motivation_letter/widget/spaceing.dart';
 import 'package:flutter/material.dart';
 // Package imports:
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -115,9 +116,7 @@ class _MotivationFutureState extends State<MotivationFuture> with TickerProvider
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
+                columnSpacing,
                 SlideTransition(
                   position: transform,
                   // opacity: subTextOpacityAnimation,
@@ -131,6 +130,7 @@ class _MotivationFutureState extends State<MotivationFuture> with TickerProvider
                     ),
                   ),
                 ),
+                spaceUndernethSection
               ],
             ),
           ),

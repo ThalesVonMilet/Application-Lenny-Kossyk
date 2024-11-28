@@ -11,3 +11,11 @@ Widget columnSpacing = const SizedBox(
 Widget sectionSpacing = const SizedBox(
   height: 90,
 );
+
+Widget spaceAboveSection = const SizedBox(
+  height: 60,
+);
+
+Widget spaceUndernethSection = const SizedBox(
+  height: 70,
+);

@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 // Project imports:
 import 'package:crypto_ui_web/constant/color.dart';
 
+import '../widget/button_widget.dart';
+import '../widget/spaceing.dart';
+
 class BottomLine extends StatefulWidget {
   const BottomLine({super.key});
 
@@ -21,78 +24,55 @@ class _BottomLineState extends State<BottomLine> {
           top: BorderSide(color: AppColors.secondaryColor),
         ),
       ),
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * 0.1, vertical: 10),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Image.asset(
-                      'assets/images/Frame 19.png',
-                      height: 40,
+      child: Column(
+        children: [
+          columnSpacing,
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              ButtonWidget(text: "Visit the code on GitHub"),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Contact Me',
+                    style: TextStyle(
+                      fontFamily: 'CH',
+                      fontSize: 12,
+                      color: Colors.white,
                     ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    const Text(
-                      '',//'Lorem ipsum dolor sit amet consectetur. \nFusce nisl lacus elementum neque.',
-                      style: TextStyle(
-                        fontFamily: 'CH',
-                        fontSize: 12,
-                        color: Colors.white,
-                      ),
-                    )
-                  ],
-                ),
-                const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Contact Me',
-                      style: TextStyle(
-                        fontFamily: 'CH',
-                        fontSize: 12,
-                        color: Colors.white,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          '+49 159 06417160',
-                          style: TextStyle(
-                            fontFamily: 'CH',
-                            fontSize: 12,
-                            color: Colors.white,
-                          ),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '+49 159 06417160',
+                        style: TextStyle(
+                          fontFamily: 'CH',
+                          fontSize: 12,
+                          color: Colors.white,
                         ),
-                        Text(
-                          'lenkossyk@gmail.com',
-                          style: TextStyle(
-                            fontFamily: 'CH',
-                            fontSize: 12,
-                            color: Colors.white,
-                          ),
+                      ),
+                      Text(
+                        'lenkossyk@gmail.com',
+                        style: TextStyle(
+                          fontFamily: 'CH',
+                          fontSize: 12,
+                          color: Colors.white,
                         ),
-                      ],
-                    )
-                  ],
-                )
-              ],
-            ),
-            const SizedBox(
-              height: 30,
-            )
-          ],
-        ),
+                      ),
+                    ],
+                  )
+                ],
+              )
+            ],
+          ),
+          columnSpacing
+        ],
       ),
     );
   }

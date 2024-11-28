@@ -17,11 +17,11 @@ class _GifWidgetState extends State<GifWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 400,
-      width: 400,
+      height: 500,
+      width: 500,
       child: Gif(
         fit: BoxFit.contain,
-        image: const AssetImage("assets/images/lamp1.gif"),
+        image: const AssetImage("assets/images/lamp2.gif"),
         controller: widget.controller,
         // if duration and fps is null, original gif fps will be used.
         //fps: 30,

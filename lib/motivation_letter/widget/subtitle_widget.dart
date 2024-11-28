@@ -27,7 +27,7 @@ class _SubtitleWidgetState extends State<SubtitleWidget> {
         child: Text(
           widget.text,
           style: const TextStyle(
-            fontSize: 25,
+            fontSize: 22,
             fontFamily: 'CH',
             fontWeight: FontWeight.bold,
             color: Colors.white,
