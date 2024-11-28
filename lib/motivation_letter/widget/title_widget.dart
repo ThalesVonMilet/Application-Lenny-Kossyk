@@ -23,24 +23,22 @@ class TitleWidget extends StatefulWidget {
 class _TitleWidgetState extends State<TitleWidget> {
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: Padding(
-          padding: widget.padding ?? const EdgeInsets.only(bottom: 0),
-          child: TextReveal(
-            maxHeight: 50,
-            controller: widget.controller,
-            textOpacityAnimation: widget.textOpacityAnimation,
-            textRevealAnimation: widget.textRevealAnimation,
-            child: Text(
-              widget.text,
-              style: const TextStyle(
-                fontSize: 30,
-                fontFamily: 'CH',
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+    return Padding(
+        padding: widget.padding ?? const EdgeInsets.only(bottom: 0),
+        child: TextReveal(
+          maxHeight: 50,
+          controller: widget.controller,
+          textOpacityAnimation: widget.textOpacityAnimation,
+          textRevealAnimation: widget.textRevealAnimation,
+          child: Text(
+            widget.text,
+            style: const TextStyle(
+              fontSize: 30,
+              fontFamily: 'CH',
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
-          )),
-    );
+          ),
+        ));
   }
 }

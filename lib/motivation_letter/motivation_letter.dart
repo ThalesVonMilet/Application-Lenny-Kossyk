@@ -46,12 +46,12 @@ class _MotivationLetterState extends ConsumerState<MotivationLetter> with Ticker
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.08),
       child: ListView(controller: controller, children: [
-        const Heading(),
+        Heading(),
         ...[
           [],
           [
             GifWidget(controller: _gifController),
-            Flexible(child: const MotivationIntroduction()),
+            const MotivationIntroduction(),
             GifWidget(controller: _gifController),
             // const MotivationSkills(),
             GifWidget(controller: _gifController),
@@ -70,27 +70,11 @@ class _MotivationLetterState extends ConsumerState<MotivationLetter> with Ticker
                 disableZoom: true,
               ),
             ),*/
-            const BottomLine(),
+            //const BottomLine(),
           ],
           [],
           []
         ][ref.watch(tabStateProvider)],
-        /*Flexible(
-          child: SizedBox(
-            //height: 500,
-            width: double.infinity,
-            child: Gif(
-              fit: BoxFit.fill,
-              image: const AssetImage("assets/images/lamp1.gif"),
-              controller: _controller,
-              // if duration and fps is null, original gif fps will be used.
-              //fps: 30,
-              //duration: const Duration(seconds: 3),
-              autostart: Autostart.no,
-              placeholder: (context) => const Text('Loading...'),
-            ),
-          ),
-        )*/
       ]),
     );
   }
