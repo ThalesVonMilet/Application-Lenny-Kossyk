@@ -17,20 +17,18 @@ class LongTextBlockWidget extends StatefulWidget {
 class _LongTextBlockWidgetState extends State<LongTextBlockWidget> {
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: 40.0),
-        child: SlideTransition(
-          position: widget.transform,
-          // opacity: subTextOpacityAnimation,
-          child: Text(
-            widget.text,
-            style: const TextStyle(
-              fontFamily: 'CH',
-              fontSize: 18,
-              color: Colors.white,
-              fontWeight: FontWeight.w200,
-            ),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 40.0),
+      child: SlideTransition(
+        position: widget.transform,
+        // opacity: subTextOpacityAnimation,
+        child: Text(
+          widget.text,
+          style: const TextStyle(
+            fontFamily: 'CH',
+            fontSize: 18,
+            color: Colors.white,
+            fontWeight: FontWeight.w200,
           ),
         ),
       ),
