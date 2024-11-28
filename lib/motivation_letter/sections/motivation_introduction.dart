@@ -76,7 +76,9 @@ class _MotivationIntroductionState extends State<MotivationIntroduction> with Si
           controller.reverse();
         }
         return Flexible(
-          child: Column(
+          child: Flex(
+            direction: Axis.vertical,
+            mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [

@@ -1,9 +1,7 @@
 // Flutter imports:
 import 'package:crypto_ui_web/motivation_letter/sections/bottom_line.dart';
 import 'package:crypto_ui_web/motivation_letter/sections/heading.dart';
-import 'package:crypto_ui_web/motivation_letter/sections/motivation_future.dart';
 import 'package:crypto_ui_web/motivation_letter/sections/motivation_introduction.dart';
-import 'package:crypto_ui_web/motivation_letter/sections/motivation_skills.dart';
 import 'package:crypto_ui_web/motivation_letter/widget/gif_widget.dart';
 import 'package:crypto_ui_web/motivation_letter/widget/spaceing.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gif/gif.dart';
-import 'package:model_viewer_plus/model_viewer_plus.dart';
 
 // Project imports:
 import '../bloc/screen_offset.dart';
@@ -54,12 +51,12 @@ class _MotivationLetterState extends ConsumerState<MotivationLetter> with Ticker
           [],
           [
             GifWidget(controller: _gifController),
-            const MotivationIntroduction(),
+            Flexible(child: const MotivationIntroduction()),
             GifWidget(controller: _gifController),
-            const MotivationSkills(),
+            // const MotivationSkills(),
             GifWidget(controller: _gifController),
-            const MotivationFuture(),
-            GifWidget(controller: _gifController),
+            // const MotivationFuture(),
+            // GifWidget(controller: _gifController),
             spaceUndernethSection,
             /*Container(
               height: 500,

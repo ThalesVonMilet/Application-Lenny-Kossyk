@@ -1,6 +1,7 @@
 // Flutter imports:
 // Project imports:
 import 'package:crypto_ui_web/bloc/screen_offset.dart';
+import 'package:crypto_ui_web/motivation_letter/widget/long_text_block.dart';
 import 'package:crypto_ui_web/motivation_letter/widget/spaceing.dart';
 import 'package:flutter/material.dart';
 // Package imports:
@@ -103,33 +104,18 @@ class _MotivationFutureState extends State<MotivationFuture> with TickerProvider
                 const SizedBox(
                   height: 30,
                 ),
-                SlideTransition(
-                  position: transform,
-                  // opacity: subTextOpacityAnimation,
-                  child: const Text(
-                    'From an early age, even before I turned 15, I wanted to do something with innovation—the desire to create something transformative, something that did not exist before I worked on it. This passion has shaped my goals and is the reason I chose to study Energy Process Engineering. This field is not only rich with opportunities but also holds the key to addressing some of the world’s most pressing challenges, particularly in the transition toward sustainable solutions.My love for natural sciences, especially engineering, stems from their ability to turn ideas into impactful realities.',
-                    style: TextStyle(
-                      fontFamily: 'CH',
-                      fontSize: 18,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w200,
-                    ),
-                  ),
-                ),
-                columnSpacing,
-                SlideTransition(
-                  position: transform,
-                  // opacity: subTextOpacityAnimation,
-                  child: const Text(
-                    'For me, engineering is the perfect way to bring about meaningful change—merging creativity, problem-solving, and practical application to improve lives and push the boundaries of what is possible. A particularly fascinating example that inspires me is the concept of foldable robots. Their compact, self-assembling design makes them ideal for space missions, where space and weight efficiency are critical. But not only that, they could be used for underwater research or in general for tough environments where current robots fail. ',
-                    style: TextStyle(
-                      fontFamily: 'CH',
-                      fontSize: 18,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w200,
-                    ),
-                  ),
-                ),
+                LongTextBlockWidget(
+                    text:
+                        'For the future I hope to gather as much knowledge as possible. Especially in learning how to think abstractly, where this internship will for certain assist me at. In the long run I want to do something better, how I will achieve this I don’t know now but I want to create my own Company one day. ',
+                    transform: transform),
+                LongTextBlockWidget(
+                    text:
+                        'I am excited about the opportunity to contribute to your project and am confident that my technical expertise, creativity, and passion make me a valuable addition to your team. I look forward to working with you and helping to bring innovation to life.',
+                    transform: transform),
+                LongTextBlockWidget(
+                    text:
+                        'Thank you for considering my application. Please feel free to contact me at [Your Email Address] or [Your Phone Number] if you would like to discuss my qualifications further. ',
+                    transform: transform),
                 spaceUndernethSection
               ],
             ),
