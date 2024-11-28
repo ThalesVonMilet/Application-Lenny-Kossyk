@@ -15,14 +15,14 @@ import 'package:gif/gif.dart';
 import '../bloc/screen_offset.dart';
 import 'controller.dart';
 
-class MotivationLetter extends StatefulWidget {
+class MotivationLetter extends ConsumerStatefulWidget {
   const MotivationLetter({super.key});
 
   @override
-  State<MotivationLetter> createState() => _MotivationLetterState();
+  ConsumerState<MotivationLetter> createState() => _MotivationLetterState();
 }
 
-class _MotivationLetterState extends State<MotivationLetter> with TickerProviderStateMixin {
+class _MotivationLetterState extends ConsumerState<MotivationLetter> with TickerProviderStateMixin {
   late GifController _controller;
   late ScrollController controller;
 
@@ -45,13 +45,20 @@ class _MotivationLetterState extends State<MotivationLetter> with TickerProvider
   Widget build(BuildContext context) {
     return ListView(controller: controller, children: [
       const FirstSection(),
-      GifWidget(controller: _controller),
-      const MotivationIntroduction(),
-      GifWidget(controller: _controller),
-      const MotivationSkills(),
-      GifWidget(controller: _controller),
-      const MotivationFuture(),
-      const BottomLine(),
+      ...[
+        [],
+        [
+          GifWidget(controller: _controller),
+          const MotivationIntroduction(),
+          GifWidget(controller: _controller),
+          const MotivationSkills(),
+          GifWidget(controller: _controller),
+          const MotivationFuture(),
+          const BottomLine(),
+        ],
+        [],
+        []
+      ][ref.watch(tabStateProvider)],
       /*Flexible(
         child: SizedBox(
           //height: 500,
