@@ -1,4 +1,5 @@
 // Flutter imports:
+import 'package:crypto_ui_web/cirriculum_vitae/cirriculum_vitae.dart';
 import 'package:crypto_ui_web/motivation_letter/sections/bottom_line.dart';
 import 'package:crypto_ui_web/motivation_letter/sections/heading.dart';
 import 'package:crypto_ui_web/motivation_letter/sections/motivation_future.dart';
@@ -97,21 +98,11 @@ class _MotivationLetterState extends ConsumerState<MotivationLetter> with Ticker
                   ],
                 ),                spaceUndernethSection,
               ])),
-          /*Container(
-            height: 500,
-            width: 500,
-            child: const ModelViewer(
-              src: 'https://modelviewer.dev/shared-assets/models/Astronaut.glb',
-              alt: 'A 3D model of an astronaut',
-              ar: true,
-              autoRotate: true,
-              iosSrc: 'https://modelviewer.dev/shared-assets/models/Astronaut.usdz',
-              disableZoom: true,
-            ),
-          ),*/
           const BottomLine(),
         ],
-        [],
+        [
+          CurriculumVitae()
+        ],
         []
       ][ref.watch(tabStateProvider)],
     ]);
