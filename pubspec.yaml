@@ -36,12 +36,11 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   google_fonts: ^6.2.1
-  flutter_bloc: ^8.1.6
   gif: ^2.3.0
   flutter_riverpod: ^2.6.1
   riverpod_annotation: ^2.6.1
   import_sorter: ^4.6.0
-  dart_format: ^1.1.20
+  dart_format: 1.1.20
   model_viewer_plus: ^1.9.1
 
 dev_dependencies:
@@ -49,15 +48,15 @@ dev_dependencies:
     sdk: flutter
   build_runner:
   custom_lint:
-  riverpod_generator: ^2.6.1
-  riverpod_lint: ^2.6.1
+  riverpod_generator: ^2.6.3
+  riverpod_lint: ^2.6.3
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -8,12 +8,10 @@ import 'package:crypto_ui_web/motivation_letter/widget/gif_widget.dart';
 import 'package:crypto_ui_web/motivation_letter/widget/spaceing.dart';
 import 'package:flutter/material.dart';
 // Package imports:
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gif/gif.dart';
 
 // Project imports:
-import '../bloc/screen_offset.dart';
 import 'controller.dart';
 
 class MotivationLetter extends ConsumerStatefulWidget {
@@ -33,20 +31,27 @@ class _MotivationLetterState extends ConsumerState<MotivationLetter> with Ticker
     motivationScrollControllerProvider = Provider<ScrollController>((ref) => controller);
 
     controller.addListener(() {
-
-      if(controller.position.pixels == 0) {
+      if (controller.position.pixels == 0) {
         _gifController.value = 0;
       } else {
         _gifController.value =
             (_gifController.upperBound - _gifController.lowerBound) * controller.position.pixels / controller.position.maxScrollExtent + 0.33;
       }
-      (MediaQuery.of(context).size.height + controller.position.pixels);
-      context.read<DisplayOffset>().changeDisplayOffset((MediaQuery.of(context).size.height + controller.position.pixels).toInt());
+
+
+      ref
+          .read(offsetStateProvider.notifier)
+          .state = (MediaQuery
+          .of(context)
+          .size
+          .height + controller.position.pixels).toInt();
     });
 
     _gifController = GifController(vsync: this);
     super.initState();
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -95,23 +100,14 @@ class _MotivationLetterState extends ConsumerState<MotivationLetter> with Ticker
                       ),
                     )
                   ],
-                ),                spaceUndernethSection,
+                ),
+                spaceUndernethSection,
               ])),
-          /*Container(
-            height: 500,
-            width: 500,
-            child: const ModelViewer(
-              src: 'https://modelviewer.dev/shared-assets/models/Astronaut.glb',
-              alt: 'A 3D model of an astronaut',
-              ar: true,
-              autoRotate: true,
-              iosSrc: 'https://modelviewer.dev/shared-assets/models/Astronaut.usdz',
-              disableZoom: true,
-            ),
-          ),*/
           const BottomLine(),
         ],
-        [],
+        [
+          const MotivationSkills(),
+        ],
         []
       ][ref.watch(tabStateProvider)],
     ]);

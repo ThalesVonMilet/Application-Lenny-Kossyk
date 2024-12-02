@@ -1,11 +1,10 @@
 // Flutter imports:
 // Project imports:
-import 'package:crypto_ui_web/bloc/screen_offset.dart';
 import 'package:crypto_ui_web/motivation_letter/widget/long_text_block.dart';
 import 'package:crypto_ui_web/motivation_letter/widget/spaceing.dart';
 import 'package:flutter/material.dart';
+
 // Package imports:
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../widget/title_widget.dart';
 
@@ -49,6 +48,7 @@ class _MotivationFutureState extends State<MotivationFuture> with TickerProvider
 
     subImageRevealAnimation =
         Tween<double>(begin: 0.0, end: 90.0).animate(CurvedAnimation(parent: controller, curve: const Interval(0.70, 1.0, curve: Curves.easeOut)));
+    controller.forward();
 
     super.initState();
   }
@@ -62,30 +62,16 @@ class _MotivationFutureState extends State<MotivationFuture> with TickerProvider
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<DisplayOffset, ScrollOffset>(
-      buildWhen: (previous, current) {
-        if (current.scrollOffsetValue > 1200 || controller.isAnimating) {
-          return true;
-        } else {
-          return false;
-        }
-      },
-      builder: (context, state) {
-        if (state.scrollOffsetValue > 1200) {
-          controller.forward();
-        } else {
-          controller.reverse();
-        }
-        return Flex(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          direction: Axis.vertical,
-          children: [
-            const SizedBox(
-              height: 10,
-            ),
-            TitleWidget(controller: controller, text: 'For the future'),
-            /*TextReveal(
+    return Flex(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      direction: Axis.vertical,
+      children: [
+        const SizedBox(
+          height: 10,
+        ),
+        TitleWidget(controller: controller, text: 'For the future'),
+        /*TextReveal(
               maxHeight: 50,
               controller: controller,
               child: const Text(
@@ -98,26 +84,23 @@ class _MotivationFutureState extends State<MotivationFuture> with TickerProvider
                 ),
               ),
             ),*/
-            const SizedBox(
-              height: 30,
-            ),
-            LongTextBlockWidget(
-                text:
-                    'For the future I hope to gather as much knowledge as possible. Especially in learning how to think abstractly, where this internship will for certain assist me at. In the long run I want to do something better, how I will achieve this I don’t know now but I want to create my own Company one day. ',
-                transform: transform),
-            LongTextBlockWidget(
-                text:
-                    'I am excited about the opportunity to contribute to your project and am confident that my technical expertise, creativity, and passion make me a valuable addition to your team. I look forward to working with you and helping to bring innovation to life.',
-                transform: transform),
-            LongTextBlockWidget(
-                text:
-                    'Thank you for considering my application. Please feel free to contact me at [Your Email Address] or [Your Phone Number] if you would like to discuss my qualifications further. ',
-                transform: transform),
-            spaceUndernethSection
-          ],
-        );
-      },
+        const SizedBox(
+          height: 30,
+        ),
+        LongTextBlockWidget(
+            text:
+                'For the future I hope to gather as much knowledge as possible. Especially in learning how to think abstractly, where this internship will for certain assist me at. In the long run I want to do something better, how I will achieve this I don’t know now but I want to create my own Company one day. ',
+            transform: transform),
+        LongTextBlockWidget(
+            text:
+                'I am excited about the opportunity to contribute to your project and am confident that my technical expertise, creativity, and passion make me a valuable addition to your team. I look forward to working with you and helping to bring innovation to life.',
+            transform: transform),
+        LongTextBlockWidget(
+            text:
+                'Thank you for considering my application. Please feel free to contact me at [Your Email Address] or [Your Phone Number] if you would like to discuss my qualifications further. ',
+            transform: transform),
+        spaceUndernethSection
+      ],
     );
-    ;
   }
 }
