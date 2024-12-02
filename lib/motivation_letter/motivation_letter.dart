@@ -8,12 +8,10 @@ import 'package:crypto_ui_web/motivation_letter/widget/gif_widget.dart';
 import 'package:crypto_ui_web/motivation_letter/widget/spaceing.dart';
 import 'package:flutter/material.dart';
 // Package imports:
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gif/gif.dart';
 
 // Project imports:
-import '../bloc/screen_offset.dart';
 import 'controller.dart';
 
 class MotivationLetter extends ConsumerStatefulWidget {
@@ -25,32 +23,37 @@ class MotivationLetter extends ConsumerStatefulWidget {
 
 class _MotivationLetterState extends ConsumerState<MotivationLetter> with TickerProviderStateMixin {
   late GifController _gifController;
-  late ScrollController controller;
+  late ScrollController _scrollController;
+
+  GlobalKey listViewKey = GlobalKey();
 
   @override
   void initState() {
-    controller = ScrollController();
-    motivationScrollControllerProvider = Provider<ScrollController>((ref) => controller);
+    _scrollController = ScrollController();
+    motivationScrollControllerProvider = Provider<ScrollController>((ref) => _scrollController);
+    listViewKeyProvider = Provider<GlobalKey>((ref) => listViewKey);
 
-    controller.addListener(() {
 
-      if(controller.position.pixels == 0) {
+    _scrollController.addListener(() {
+      if (_scrollController.position.pixels == 0) {
         _gifController.value = 0;
       } else {
         _gifController.value =
-            (_gifController.upperBound - _gifController.lowerBound) * controller.position.pixels / controller.position.maxScrollExtent + 0.33;
+            (_gifController.upperBound - _gifController.lowerBound) * _scrollController.position.pixels / _scrollController.position.maxScrollExtent +
+                0.33;
       }
-      (MediaQuery.of(context).size.height + controller.position.pixels);
-      context.read<DisplayOffset>().changeDisplayOffset((MediaQuery.of(context).size.height + controller.position.pixels).toInt());
+
+      ref.read(offsetStateProvider.notifier).state = (MediaQuery.of(context).size.height + _scrollController.position.pixels).toInt();
     });
 
     _gifController = GifController(vsync: this);
+
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return ListView(controller: controller, children: [
+    return ListView(key: listViewKey, controller: _scrollController, children: [
       Heading(),
       ...[
         [],
@@ -95,7 +98,8 @@ class _MotivationLetterState extends ConsumerState<MotivationLetter> with Ticker
                       ),
                     )
                   ],
-                ),                spaceUndernethSection,
+                ),
+                spaceUndernethSection,
               ])),
           /*Container(
             height: 500,
