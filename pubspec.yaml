@@ -42,6 +42,7 @@ dependencies:
   import_sorter: ^4.6.0
   dart_format: 1.1.20
   model_viewer_plus: ^1.9.1
+  flutter_launcher_icons: ^0.14.2
 
 dev_dependencies:
   flutter_test:
@@ -50,6 +51,25 @@ dev_dependencies:
   custom_lint:
   riverpod_generator: ^2.6.3
   riverpod_lint: ^2.6.3
+  flutter_launcher_icons: "^0.14.2"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: false
+  image_path: "assets/images/icon/icon.jpg"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/images/icon/icon.jpg"
+    #background_color: "#hexcode"
+    #theme_color: "#hexcode"
+  windows:
+    generate: false
+    image_path: "path/to/image.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: false
+    image_path: "path/to/image.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

@@ -12,6 +12,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gif/gif.dart';
 
 // Project imports:
+import '../cirriculum_vitae/cirriculum_vitae.dart';
 import 'controller.dart';
 
 class MotivationLetter extends ConsumerStatefulWidget {
@@ -116,7 +117,7 @@ class _MotivationLetterState extends ConsumerState<MotivationLetter> with Ticker
           const BottomLine(),
         ],
         [],
-        []
+        [CurriculumVitae()]
       ][ref.watch(tabStateProvider)],
     ]);
   }
