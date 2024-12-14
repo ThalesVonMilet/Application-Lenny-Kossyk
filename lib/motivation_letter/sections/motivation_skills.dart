@@ -1,81 +1,40 @@
 // Flutter imports:
 // Project imports:
+import 'package:crypto_ui_web/motivation_letter/controller.dart';
 import 'package:crypto_ui_web/motivation_letter/widget/long_text_block.dart';
 import 'package:crypto_ui_web/motivation_letter/widget/spaceing.dart';
 import 'package:crypto_ui_web/motivation_letter/widget/subtitle_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Package imports:
 
 import '../widget/title_widget.dart';
 
-class MotivationSkills extends StatefulWidget {
+class MotivationSkills extends ConsumerStatefulWidget {
   const MotivationSkills({super.key});
 
   @override
-  State<MotivationSkills> createState() => _MotivationSkillsState();
+  ConsumerState<MotivationSkills> createState() => _MotivationSkillsState();
 }
 
-class _MotivationSkillsState extends State<MotivationSkills> with SingleTickerProviderStateMixin {
-  late AnimationController controller;
-  late Animation<double> imageRevealAnimation;
-  late Animation<double> textRevealAnimation;
-  late Animation<double> subTextOpacityAnimation;
-  late Animation<double> subImageRevealAnimation;
-  late Animation<Offset> transform;
-
-  @override
-  void initState() {
-    controller = AnimationController(
-      vsync: this,
-      duration: const Duration(
-        milliseconds: 1700,
-      ),
-      reverseDuration: const Duration(
-        milliseconds: 375,
-      ),
-    );
-
-    imageRevealAnimation =
-        Tween<double>(begin: 500.0, end: 0.0).animate(CurvedAnimation(parent: controller, curve: const Interval(0.0, 0.40, curve: Curves.easeOut)));
-
-    textRevealAnimation =
-        Tween<double>(begin: 70.0, end: 0.0).animate(CurvedAnimation(parent: controller, curve: const Interval(0.30, 0.60, curve: Curves.easeOut)));
-
-    subTextOpacityAnimation =
-        Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(parent: controller, curve: const Interval(0.50, 0.80, curve: Curves.easeOut)));
-
-    transform = Tween<Offset>(begin: const Offset(10, 0), end: const Offset(0, 0)).animate(CurvedAnimation(parent: controller, curve: Curves.ease));
-
-    subImageRevealAnimation =
-        Tween<double>(begin: 0.0, end: 90.0).animate(CurvedAnimation(parent: controller, curve: const Interval(0.70, 1.0, curve: Curves.easeOut)));
-
-    controller.forward();
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    controller.dispose();
-    super.dispose();
-  }
+class _MotivationSkillsState extends ConsumerState<MotivationSkills> {
 
   Widget _title(String text) => TitleWidget(
         padding: const EdgeInsets.only(bottom: 25.0),
-        controller: controller,
         text: text,
       );
 
   Widget _subtitle(String text) => SubtitleWidget(
-        controller: controller,
+        //controller: controller,
         text: text,
       );
 
-  Widget _longText(String text) => LongTextBlockWidget(text: text, transform: transform);
+  Widget _longText(String text) => LongTextBlockWidget(text: text);
 
   @override
   Widget build(BuildContext context) {
+
     return Flex(
       direction: Axis.vertical,
       crossAxisAlignment: CrossAxisAlignment.start,

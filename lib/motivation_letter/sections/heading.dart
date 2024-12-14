@@ -16,11 +16,9 @@ class Heading extends ConsumerStatefulWidget {
   ConsumerState<Heading> createState() => _FirstSectionState();
 }
 
-class _FirstSectionState extends ConsumerState<Heading> with TickerProviderStateMixin {
+class _FirstSectionState extends ConsumerState<Heading> with SingleTickerProviderStateMixin {
   late AnimationController controller;
-  late Animation<double> textRevealAnimation;
   late Animation<double> textOpacityAnimation;
-  late Animation<double> descriptionAnimation;
 
   late int _currentTabIndex = ref.read(tabStateProvider);
 
@@ -36,14 +34,12 @@ class _FirstSectionState extends ConsumerState<Heading> with TickerProviderState
       ),
     );
 
-    textRevealAnimation =
-        Tween<double>(begin: 60.0, end: 0.0).animate(CurvedAnimation(parent: controller, curve: const Interval(0.0, 0.2, curve: Curves.easeOut)));
-
     textOpacityAnimation =
         Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(parent: controller, curve: const Interval(0.0, 0.3, curve: Curves.easeOut)));
     Future.delayed(const Duration(milliseconds: 1000), () {
       controller.forward();
     });
+
     super.initState();
   }
 
@@ -101,10 +97,7 @@ class _FirstSectionState extends ConsumerState<Heading> with TickerProviderState
 
   Widget _title(String text) => TitleWidget(
         padding: const EdgeInsets.only(bottom: 8),
-        controller: controller,
         text: text,
-        textOpacityAnimation: textOpacityAnimation,
-        textRevealAnimation: textRevealAnimation,
       );
 
   Widget _button(String text, int tabIndex) => ButtonWidget(

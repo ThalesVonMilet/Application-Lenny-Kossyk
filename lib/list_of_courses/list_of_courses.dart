@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../motivation_letter/widget/heading_widget.dart';
 import '../motivation_letter/widget/long_text_block.dart';
 import '../motivation_letter/widget/subtitle_widget.dart';
 import '../motivation_letter/widget/title_widget.dart';
@@ -45,24 +46,22 @@ class _CurriculumVitaeState extends ConsumerState<ListOfCourses> with TickerProv
 
   Widget _title(String text) => TitleWidget(
         padding: const EdgeInsets.only(bottom: 0.0),
-        controller: controller,
         text: text,
       );
 
   Widget _subtitle(String text) => Padding(
         padding: EdgeInsets.only(left: 40, bottom: 26, top: 70.0),
         child: SubtitleWidget(
-          controller: controller,
           text: text,
         ),
       );
 
   _heading(String text) => Padding(
         padding: const EdgeInsets.only(left: 65.0, bottom: 16),
-        child: HeadingWidget(text: text, transform: transform),
+        child: HeadingWidget(text: text),
       );
 
-  Widget _longText(String text) => Padding(padding: EdgeInsets.only(left: 85), child: LongTextBlockWidget(text: text, transform: transform));
+  Widget _longText(String text) => Padding(padding: EdgeInsets.only(left: 85), child: LongTextBlockWidget(text: text));
 
   @override
   Widget build(BuildContext context) {
@@ -186,35 +185,4 @@ class _CurriculumVitaeState extends ConsumerState<ListOfCourses> with TickerProv
 /// playwright, cyberes
 ///
 
-class HeadingWidget extends StatefulWidget {
-  const HeadingWidget({
-    super.key,
-    required this.text,
-    required this.transform,
-  });
 
-  final Animation<Offset> transform;
-  final String text;
-
-  @override
-  State<HeadingWidget> createState() => _HeadingWidgetState();
-}
-
-class _HeadingWidgetState extends State<HeadingWidget> {
-  @override
-  Widget build(BuildContext context) {
-    return SlideTransition(
-      position: widget.transform,
-      // opacity: subTextOpacityAnimation,
-      child: Text(
-        widget.text,
-        style: const TextStyle(
-          fontFamily: 'CH',
-          fontSize: 18,
-          color: Colors.white,
-          fontWeight: FontWeight.w600,
-        ),
-      ),
-    );
-  }
-}
