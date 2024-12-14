@@ -43,6 +43,7 @@ class _MotivationLetterState extends ConsumerState<MotivationLetter>
     });
 
     _gifController = GifController(vsync: this);
+    //      padding: const EdgeInsets.only(bottom: 40.0),
     super.initState();
   }
 

@@ -19,19 +19,16 @@ class SubtitleWidget extends StatefulWidget {
 class _SubtitleWidgetState extends State<SubtitleWidget> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: widget.padding ?? const EdgeInsets.only(bottom: 15),
-      child: TextReveal(
-        maxHeight: 50,
-        controller: widget.controller,
-        child: Text(
-          widget.text,
-          style: const TextStyle(
-            fontSize: 22,
-            fontFamily: 'CH',
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
+    return TextReveal(
+      maxHeight: 50,
+      controller: widget.controller,
+      child: Text(
+        widget.text,
+        style: const TextStyle(
+          fontSize: 22,
+          fontFamily: 'CH',
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
         ),
       ),
     );
