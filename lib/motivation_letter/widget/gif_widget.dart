@@ -21,7 +21,7 @@ class _GifWidgetState extends State<GifWidget> {
       width: double.infinity,
       child: Gif(
         fit: BoxFit.contain,
-        image: const AssetImage("assets/images/lamp2.gif"),
+        image: const AssetImage("assets/images/lamp7.gif"),
         controller: widget.controller,
         // if duration and fps is null, original gif fps will be used.
         //fps: 30,

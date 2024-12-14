@@ -27,19 +27,6 @@ class _MotivationFutureState extends State<MotivationFuture> {
           height: 10,
         ),
         TitleWidget(text: 'For the future'),
-        /*TextReveal(
-              maxHeight: 50,
-              controller: controller,
-              child: const Text(
-                'of Your Choice',
-                style: TextStyle(
-                  fontSize: 30,
-                  fontFamily: 'CH',
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-            ),*/
         const SizedBox(
           height: 30,
         ),

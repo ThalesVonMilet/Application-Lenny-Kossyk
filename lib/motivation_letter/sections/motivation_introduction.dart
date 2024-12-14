@@ -3,6 +3,7 @@
 import 'package:crypto_ui_web/motivation_letter/widget/long_text_block.dart';
 import 'package:crypto_ui_web/motivation_letter/widget/spaceing.dart';
 import 'package:flutter/material.dart';
+
 // Package imports:
 
 import '../widget/title_widget.dart';
@@ -15,8 +16,6 @@ class MotivationIntroduction extends StatefulWidget {
 }
 
 class _MotivationIntroductionState extends State<MotivationIntroduction> {
-
-
   @override
   Widget build(BuildContext context) {
     return Flex(
@@ -27,18 +26,14 @@ class _MotivationIntroductionState extends State<MotivationIntroduction> {
       children: [
         spaceAboveSection,
         TitleWidget(
+          padding: EdgeInsets.only(bottom: 26),
           text: 'What motivates me',
         ),
-        columnSpacing,
         LongTextBlockWidget(
           text:
-              'From an early age, even before I turned 15, I wanted to do something with innovation—the desire to create something transformative, something that did not exist before I worked on it. This passion has shaped my goals and is the reason I chose to study Energy Process Engineering. This field is not only rich with opportunities but also holds the key to addressing some of the world’s most pressing challenges, particularly in the transition toward sustainable solutions.My love for natural sciences, especially engineering, stems from their ability to turn ideas into impactful realities.',
-        ),
-        columnSpacing,
-        LongTextBlockWidget(
-          // opacity: subTextOpacityAnimation,
-          text:
-              'For me, engineering is the perfect way to bring about meaningful change—merging creativity, problem-solving, and practical application to improve lives and push the boundaries of what is possible. A particularly fascinating example that inspires me is the concept of foldable robots. Their compact, self-assembling design makes them ideal for space missions, where space and weight efficiency are critical. But not only that, they could be used for underwater research or in general for tough environments where current robots fail. ',
+              'From an early age, even before I turned 15, I wanted to do something with innovation—the desire to create something transformative, something that did not exist before I worked on it. This passion has shaped my goals and is the reason I chose to study Energy Process Engineering. This field is not only rich with opportunities but also holds the key to addressing some of the world’s most pressing challenges, particularly in the transition toward sustainable solutions.My love for natural sciences, especially engineering, stems from their ability to turn ideas into impactful realities.\n'
+              '\n'
+              'For me, engineering is the perfect way to bring about meaningful change—merging creativity, problem-solving, and practical application to improve lives and push the boundaries of what is possible. A particularly fascinating example that inspires me is the concept of foldable robots. Their compact, self-assembling design makes them ideal for space missions, where space and weight efficiency are critical. But not only that, they could be used for underwater research or in general for tough environments where current robots fail.',
         ),
         spaceUndernethSection
       ],

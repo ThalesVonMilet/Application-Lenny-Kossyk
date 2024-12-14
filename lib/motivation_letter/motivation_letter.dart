@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gif/gif.dart';
+import 'package:logger/logger.dart';
 
 // Project imports:
 import 'controller.dart';
@@ -29,20 +30,21 @@ class _MotivationLetterState extends ConsumerState<MotivationLetter>
   @override
   void initState() {
     _scrollController = ref.read(motivationScrollControllerProvider);
+    _gifController = GifController(vsync: this);
 
     _scrollController.addListener(() {
       if (_scrollController.position.pixels == 0) {
         _gifController.value = 0;
       } else {
-        _gifController.value =
+        double value =
             (_gifController.upperBound - _gifController.lowerBound) *
-                    _scrollController.position.pixels /
-                    _scrollController.position.maxScrollExtent +
-                0.33;
+                    _scrollController.position.pixels/
+                    _scrollController.position.maxScrollExtent;
+
+        _gifController.value = value;
       }
     });
 
-    _gifController = GifController(vsync: this);
     //      padding: const EdgeInsets.only(bottom: 40.0),
     super.initState();
   }

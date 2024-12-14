@@ -1,6 +1,5 @@
 // Flutter imports:
 // Project imports:
-import 'package:crypto_ui_web/motivation_letter/controller.dart';
 import 'package:crypto_ui_web/motivation_letter/widget/long_text_block.dart';
 import 'package:crypto_ui_web/motivation_letter/widget/spaceing.dart';
 import 'package:crypto_ui_web/motivation_letter/widget/subtitle_widget.dart';
@@ -19,22 +18,25 @@ class MotivationSkills extends ConsumerStatefulWidget {
 }
 
 class _MotivationSkillsState extends ConsumerState<MotivationSkills> {
-
   Widget _title(String text) => TitleWidget(
-        padding: const EdgeInsets.only(bottom: 25.0),
+        padding: const EdgeInsets.only(bottom: 30.0),
         text: text,
       );
 
-  Widget _subtitle(String text) => SubtitleWidget(
-        //controller: controller,
-        text: text,
+  Widget _subtitle(String text) => Padding(
+        padding: const EdgeInsets.only(bottom: 12),
+        child: SubtitleWidget(
+          text: text,
+        ),
       );
 
-  Widget _longText(String text) => LongTextBlockWidget(text: text);
+  Widget _longText(String text) => Padding(
+    padding: const EdgeInsets.only(bottom: 20),
+    child: LongTextBlockWidget(text: text),
+  );
 
   @override
   Widget build(BuildContext context) {
-
     return Flex(
       direction: Axis.vertical,
       crossAxisAlignment: CrossAxisAlignment.start,

@@ -5,12 +5,9 @@ import 'package:visibility_detector/visibility_detector.dart';
 class SubtitleWidget extends StatefulWidget {
   const SubtitleWidget(
       {super.key,
-        //required this.controller,
         required this.text,
-        this.padding});
+      });
 
-  final EdgeInsets? padding;
-  //final AnimationController controller;
   final String text;
 
   @override
