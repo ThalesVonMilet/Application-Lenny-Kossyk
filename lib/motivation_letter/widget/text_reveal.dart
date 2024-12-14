@@ -48,15 +48,7 @@ class _TextRevealState extends ConsumerState<TextReveal> with TickerProviderStat
     RenderObject? animatedBoxObject = animatedBoxKey.currentContext?.findRenderObject();
     if (animatedBoxObject == null) return;
 
-    final listViewHeight = ref.read(listViewKeyProvider).paintBounds.height;
-    print(listViewHeight);
-
-    final animatedBoxVisible = (offset + enterAnimationMinHeight < listViewHeight);
-
-    if (animatedBoxVisible) {
-      // start animation
-      controller.forward();
-    }
+    controller.forward();
   }
 
   late int offset = ref.read(offsetStateProvider);

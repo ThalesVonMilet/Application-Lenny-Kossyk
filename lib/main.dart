@@ -60,22 +60,11 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
     motivationScrollControllerProvider =
         Provider<ScrollController>((ref) => _scrollController);
 
-    listViewKeyProvider =
-        Provider<GlobalKey<State<StatefulWidget>>>((ref) => listViewKey);
-
     _scrollController.addListener(() {
       ref.read(offsetStateProvider.notifier).state =
           (MediaQuery.of(context).size.height +
                   _scrollController.position.pixels)
               .toInt();
-      Logger().i(MediaQuery.of(context).size.height);
-      Logger().i(MediaQuery.of(context).size.height +
-          _scrollController.position.pixels);
-      Logger().i(listViewKey.currentContext?.size?.height);
-      Logger().i(_scrollController.position.maxScrollExtent);
-      final RenderBox renderBox = _key.currentContext!.findRenderObject() as RenderBox;
-      final position = renderBox.localToGlobal(Offset.zero);
-      Logger().i('Position: $position');
     });
     super.initState();
   }
