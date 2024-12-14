@@ -74,7 +74,7 @@ class _CurriculumVitaeState extends ConsumerState<ListOfCourses> with TickerProv
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            _title('Courses Overview'),
+            _title('List of courses'),
             Flex(
                 direction: Axis.vertical,
                 mainAxisAlignment: MainAxisAlignment.start,
