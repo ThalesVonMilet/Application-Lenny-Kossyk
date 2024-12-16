@@ -17,13 +17,13 @@ class CurriculumVitae extends StatefulWidget {
 
 class _CurriculumVitaeState extends State<CurriculumVitae> {
   Widget _title(String text) => TitleWidget(
-        padding: const EdgeInsets.only(bottom: 25.0),
-        text: text,
-      );
+    padding: const EdgeInsets.only(bottom: 25.0),
+    text: text,
+  );
 
   Widget _subtitle(String text) => SubtitleWidget(
-        text: text,
-      );
+    text: text,
+  );
 
   Widget _longText(String text) => LongTextBlockWidget(text: text);
 
@@ -49,18 +49,18 @@ class _CurriculumVitaeState extends State<CurriculumVitae> {
                         'Address: Wilhelmshavenerstr. 12, 90425 Nuremberg, Germany\n'
                         'Email: lenkossyk@gmail.com\n'
                         'Phone: +49 159 06417160'),
-                    spaceUndernethSection,
+                    spaceUnderneathSection,
                     _title('School education'),
                     _subtitle('General qualification for university entrance'),
-                    _longText('Peter-Vischer-Schule Gymnasium, Nuremberg (2011 - 2021)\n'
+                    _longText('Peter-Vischer-School Gymnasium, Nuremberg (2011 - 2021)\n'
                         'Abitur average: 2.4'),
-                    spaceUndernethSection,
+                    spaceUnderneathSection,
                     _title('Higher education'),
                     _subtitle('Friedrich Alexander University \n(2022 - 2023):'),
                     _longText('Energy technology\n'),
                     _subtitle('Nuremberg Technical University \n(since 2023):'),
                     _longText('Energy process technology\n'),
-                    spaceUndernethSection,
+                    spaceUnderneathSection,
                     _title('Previous professional experience'),
                     _subtitle('Internships Astrum IT \n(February - March 2022):'),
                     _longText('Developed a mobile Flutter application as an internship project\n'),
@@ -70,12 +70,13 @@ class _CurriculumVitaeState extends State<CurriculumVitae> {
                     _longText('Lead developer of a mobile Flutter application focused on geocaching\n'),
                     _subtitle('Working student Heitec Innovations \n(since April 2024):'),
                     _longText('Lead developer of a mobile Flutter application focused on energy data visualization\n'),
-                    spaceUndernethSection,
-                    _title('Educational achievements'),
+                    spaceUnderneathSection,
+                    _title('List of achievements'),
                     _longText('1st sponsorship award from the Association for the History of the City of Nuremberg (2021):\n'
                         'For scientific seminar thesis on political views and social stratification based on student essays from 1946\n\n'
-                        'Deutschlandstipendium (since 2024)'),
-                    spaceUndernethSection,
+                        'Completion of the Existency Building Box Program with my startup,\n a government-funded initiative designed to teach startups essential skills for building a successful business\n\n'
+                        'Deutschlandstipendium, a scholarship of the state of Germany (since 2024)\n'),
+                    spaceUnderneathSection,
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
@@ -108,7 +109,7 @@ class _CurriculumVitaeState extends State<CurriculumVitae> {
                         ],
                       ),
                     ),
-                    spaceUndernethSection,
+                    spaceUnderneathSection,
                   ])),
           BottomLine()
         ]);
