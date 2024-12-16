@@ -80,11 +80,10 @@ class _MotivationLetterState extends State<MotivationLetter> with TickerProvider
                     text: 'What motivates me',
                   ),
                   LongTextBlockWidget(
-                    text:
-                        'From an early stage in life, even before the age of 15, I aspired to pursue a path rooted in innovation and engineering. I had the desire to create something entirely new that had not existed until I brought it to life. This passion has shaped my goals in life and is the reason I chose to study Energy Process Engineering. This field not only offers various opportunities but also plays a key role in tackling some of the world\'s most urgent challenges, especially in advancing the transition to sustainable solutions.\n'
-                        '\n'
-                        'My enthusiasm for sciences stems from their ability to turn ideas into impactful realities. For me, engineering is the ideal path to create meaningful changes in our society —combining creativity, analytical thinking, and practical application to improve lives and push the boundaries of what is possible. I think a perfect project, that exactly shows what I aspire, is your innovation on folding robots. Their compact, self-assembling design makes them ideal for space missions, where space and weight efficiency are critical. But not only that, they could be used for underwater research or in general for tough environments where current robots fail.',
-                  ),
+                      text:
+                          'From an early stage in life, even before the age of 15, I aspired to pursue a path rooted in innovation and engineering. I had the desire to create something entirely new that had not existed until I brought it to life. This passion has shaped my goals in life and is the reason I chose to study Energy Process Engineering. This field not only offers various opportunities but also plays a key role in tackling some of the world’s most urgent challenges, especially in advancing the transition to sustainable solutions.'
+                          '\n\n'
+                          'My enthusiasm for sciences stems from their ability to turn ideas into impactful realities. For me, engineering is the ideal path to create meaningful changes in our society —combining creativity, analytical thinking, and practical application to improve lives and push the boundaries of what is possible. I think a perfect project, that exactly shows what I aspire, is your innovation on Augmented reality lab applications. AR has the potential to significantly enhance how medical students learn by allowing them to interact with 3D models of organs, tissues, and other structures. This deeper, more interactive visualization helps students better understand anatomy and the complexities of the human body, improving their knowledge and decision-making in clinical settings. What excites me most is the potential for AR to expand beyond education and be used in surgical training, allowing students and doctors to practice procedures on virtual representations of real patients before performing them in the operating room. As well as for looking at magnetic resonance imaging in 3D directly so the doctor can locate problems even faster and better. This allows people to be treated more effectively, enabling them to return to enjoying their lives more quickly.'),
                   spaceUnderneathSection,
                   GifWidget(controller: _gifController),
                   spaceAboveSection,
@@ -93,12 +92,6 @@ class _MotivationLetterState extends State<MotivationLetter> with TickerProvider
                   SizedBox(
                     height: 14,
                   ),
-                  _subtitle('Electrical Engineering:'),
-                  _longText(
-                      'I have a solid foundation in electrical engineering, having passed my electrical exam with distinction. In addition, I completed an electrical engineering course, further deepening my understanding of the field.'),
-                  _subtitle('Practical Experience with Arduino:'),
-                  _longText(
-                      'In my free time, I have gained hands-on experience with Arduino by building an electric car, allowing me to explore the integration of hardware and software in creative projects.'),
                   _subtitle('Proficiency in CAD Software:'),
                   _longText(
                       'Through my university module, “Introduction to CAD”, I developed proficiency in NX Siemens and Fusion 360. These tools enable me to design complex systems efficiently.'),
@@ -107,7 +100,7 @@ class _MotivationLetterState extends State<MotivationLetter> with TickerProvider
                       'As a hobby, I use Blender to animate and visualize ideas. I find this to be an excellent way to communicate concepts visually, particularly for individuals who may struggle to grasp abstract technical descriptions or broad ideas.'),
                   _subtitle('Software Developer:'),
                   _longText(
-                      'Over the past three years, I have worked as a full-stack app developer and co-founded a startup, where I led the development efforts for 1.5 years. This experience has enhanced my ability to solve problems independently, collaborate effectively within teams, and manage projects with precision-skills that are essential for success in any collaborative environment.'),
+                      'Over the past three years, I have worked as a full-stack app developer and co-founded a startup, where I led the development efforts for 1.5 years. This experience has enhanced my ability to solve problems independently, collaborate effectively within teams, and manage projects with precision-skills that are essential for success in any collaborative environment'),
                   spaceUnderneathSection,
                   GifWidget(controller: _gifController),
                   const SizedBox(
@@ -118,8 +111,7 @@ class _MotivationLetterState extends State<MotivationLetter> with TickerProvider
                     height: 30,
                   ),
                   LongTextBlockWidget(
-                    text:
-                        'Looking ahead, I am interested in working on emerging technologies such as hydrogen systems, advanced batteries, robotics, or other innovative fields. To achieve this I need to develop the skills needed to design and build such solutions. I view this internship as a great opportunity to further these skills while contributing to your project.\n',
+                    text: 'Looking ahead, I am interested in working on emerging technologies such as augmented reality, AI, hydrogen systems, advanced batteries or other innovative fields. To achieve this I need to develop the skills needed to design and build such solutions. I view this internship as a great opportunity to further these skills while contributing to your project.\n'
                   ),
                   LongTextBlockWidget(
                     text:
