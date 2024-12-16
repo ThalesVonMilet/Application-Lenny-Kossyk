@@ -7,7 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 // Project imports:
 import 'common/constant/color.dart';
 import 'common/widget/heading.dart';
-import 'controller.dart';
+import 'common/controller.dart';
 import 'features/cirriculum_vitae/cirriculum_vitae.dart';
 import 'features/list_of_courses/list_of_courses.dart';
 import 'features/motivation_letter/motivation_letter.dart';
