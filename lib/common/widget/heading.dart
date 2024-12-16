@@ -58,7 +58,7 @@ class _FirstSectionState extends ConsumerState<Heading> with SingleTickerProvide
       ),
       _title('Welcome to the application'),
       _title('of Lenny Kossyk for'),
-      _title('Development of magnetic self-folding robots'),
+      _title('Electric Vehicle Battery Manufacturing – various aspects'),
       columnSpacing,
       TextTransform(
         maxHeight: 100,
@@ -67,7 +67,7 @@ class _FirstSectionState extends ConsumerState<Heading> with SingleTickerProvide
         //textRevealAnimation: textRevealAnimation,
         child: const Text(
           // TODO change Name
-          'Dear Dr. Xue Chen this website is my application',
+          'Dear Indranil Manna this website is my application',
           style: TextStyle(fontFamily: 'CH', fontSize: 13, color: Colors.white, fontWeight: FontWeight.w200),
         ),
       ),
