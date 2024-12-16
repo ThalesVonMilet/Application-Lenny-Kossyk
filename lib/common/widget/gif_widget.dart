@@ -17,11 +17,11 @@ class _GifWidgetState extends State<GifWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: 500,
+        height: 370,
         width: double.infinity,
         child: Gif(
             fit: BoxFit.contain,
-            image: const AssetImage("assets/images/origami.gif"),
+            image: const AssetImage("assets/images/battery_pack.gif"),
             controller: widget.controller,
             autostart: Autostart.no,
             placeholder: (context) => Center(

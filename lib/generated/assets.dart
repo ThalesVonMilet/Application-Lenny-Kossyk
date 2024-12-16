@@ -10,6 +10,6 @@ class Assets {
   static const String fontsClashDisplaySemibold = 'assets/fonts/ClashDisplay-Semibold.ttf';
   static const String iconIcon = 'assets/images/icon/icon.png';
   static const String images3d = 'assets/images/3d.glb';
-  static const String imagesOrigami = 'assets/images/origami.gif';
+  static const String imagesBatteryPack = 'assets/images/battery_pack.gif';
 
 }
