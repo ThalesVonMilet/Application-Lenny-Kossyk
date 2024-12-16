@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 // Project imports:
 import 'package:crypto_ui_web/common/constant/spaceing.dart';
+import '../../common/widget/bottom_line.dart';
+import '../../common/widget/heading_widget.dart';
 import '../../common/widget/long_text_block.dart';
 import '../../common/widget/subtitle_widget.dart';
 import '../../common/widget/title_widget.dart';
-import '../common/widget/bottom_line.dart';
-import '../common/widget/heading_widget.dart';
 
 class ListOfCourses extends StatefulWidget {
   const ListOfCourses({super.key});

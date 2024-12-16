@@ -6,11 +6,11 @@ import 'package:gif/gif.dart';
 
 // Project imports:
 import 'package:crypto_ui_web/common/widget/bottom_line.dart';
-import '../common/constant/spaceing.dart';
-import '../common/widget/gif_widget.dart';
-import '../common/widget/long_text_block.dart';
-import '../common/widget/subtitle_widget.dart';
-import '../common/widget/title_widget.dart';
+import '../../common/constant/spaceing.dart';
+import '../../common/widget/gif_widget.dart';
+import '../../common/widget/long_text_block.dart';
+import '../../common/widget/subtitle_widget.dart';
+import '../../common/widget/title_widget.dart';
 
 class MotivationLetter extends StatefulWidget {
   const MotivationLetter({super.key, required this.scrollController});
@@ -40,8 +40,13 @@ class _MotivationLetterState extends State<MotivationLetter> with TickerProvider
         _gifController.value = value.abs();
       }
     });
-
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    _gifController.dispose();
+    super.dispose();
   }
 
   @override
@@ -134,8 +139,8 @@ class _MotivationLetterState extends State<MotivationLetter> with TickerProvider
                   spaceUndernethSection,
                   GifWidget(controller: _gifController),
                   spaceUndernethSection,
-                  const BottomLine(),
                 ])),
+        const BottomLine()
       ],
     );
   }
