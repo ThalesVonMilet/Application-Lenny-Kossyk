@@ -1,7 +1,6 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:logger/logger.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 class TextReveal extends ConsumerStatefulWidget {
@@ -53,7 +52,6 @@ class _TextRevealState extends ConsumerState<TextReveal> with SingleTickerProvid
           } else {
             controller.forward();
           }
-          Logger().i(visible.visibleBounds);
         },
         child: AnimatedBuilder(
             animation: textRevealAnimation,

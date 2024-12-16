@@ -8,28 +8,26 @@ import 'package:crypto_ui_web/motivation_letter/widget/spaceing.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gif/gif.dart';
-import 'package:logger/logger.dart';
 
-// Project imports:
-import 'controller.dart';
 
-class MotivationLetter extends ConsumerStatefulWidget {
-  const MotivationLetter({super.key});
+
+class MotivationLetter extends StatefulWidget {
+  const MotivationLetter({super.key, required this.scrollController});
+  final ScrollController scrollController;
 
   @override
-  ConsumerState<MotivationLetter> createState() => _MotivationLetterState();
+ State<MotivationLetter> createState() => _MotivationLetterState();
 }
 
-class _MotivationLetterState extends ConsumerState<MotivationLetter>
+class _MotivationLetterState extends State<MotivationLetter>
     with TickerProviderStateMixin {
   late ScrollController _scrollController;
   late GifController _gifController;
 
   @override
   void initState() {
-    _scrollController = ref.read(motivationScrollControllerProvider);
+    _scrollController = widget.scrollController;
     _gifController = GifController(vsync: this);
 
     _scrollController.addListener(() {
@@ -41,11 +39,10 @@ class _MotivationLetterState extends ConsumerState<MotivationLetter>
                     _scrollController.position.pixels/
                     _scrollController.position.maxScrollExtent;
 
-        _gifController.value = value;
+        _gifController.value = value.abs();
       }
     });
 
-    //      padding: const EdgeInsets.only(bottom: 40.0),
     super.initState();
   }
 
@@ -74,38 +71,10 @@ class _MotivationLetterState extends ConsumerState<MotivationLetter>
           const MotivationSkills(),
           GifWidget(controller: _gifController),
           const MotivationFuture(),
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              GifWidget(controller: _gifController),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: Flex(
-                  direction: Axis.vertical,
-                  children: [
-                    Icon(
-                      Icons.refresh,
-                      color: Colors.grey.shade400,
-                      size: 35,
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
+          columnSpacing,
+          GifWidget(controller: _gifController),
           spaceUndernethSection,
-          /*Container(
-            height: 500,
-            width: 500,
-            child: const ModelViewer(
-              src: 'https://modelviewer.dev/shared-assets/models/Astronaut.glb',
-              alt: 'A 3D model of an astronaut',
-              ar: true,
-              autoRotate: true,
-              iosSrc: 'https://modelviewer.dev/shared-assets/models/Astronaut.usdz',
-              disableZoom: true,
-            ),
-          ),*/
+          spaceUndernethSection,
           const BottomLine(),
         ]));
   }

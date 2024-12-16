@@ -1,4 +1,3 @@
-import 'package:crypto_ui_web/motivation_letter/widget/text_reveal.dart';
 import 'package:flutter/material.dart';
 import 'package:gif/gif.dart';
 
@@ -21,7 +20,7 @@ class _GifWidgetState extends State<GifWidget> {
       width: double.infinity,
       child: Gif(
         fit: BoxFit.contain,
-        image: const AssetImage("assets/images/lamp7.gif"),
+        image: const AssetImage("assets/images/origami.gif"),
         controller: widget.controller,
         // if duration and fps is null, original gif fps will be used.
         //fps: 30,

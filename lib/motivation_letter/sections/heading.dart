@@ -53,46 +53,43 @@ class _FirstSectionState extends ConsumerState<Heading> with SingleTickerProvide
   Widget build(BuildContext context) {
     _currentTabIndex = ref.watch(tabStateProvider);
 
-    return Flex(
-      direction: Axis.vertical,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        const SizedBox(
-          height: 120,
+    return Flex(direction: Axis.vertical, crossAxisAlignment: CrossAxisAlignment.center, children: [
+      const SizedBox(
+        height: 120,
+      ),
+      _title('Welcome to the application'),
+      _title('of Lenny Kossyk for'),
+      _title('Development of magnetic self-folding robots'),
+      columnSpacing,
+      TextTransform(
+        maxHeight: 100,
+        controller: controller,
+        textOpacityAnimation: textOpacityAnimation,
+        //textRevealAnimation: textRevealAnimation,
+        child: const Text(
+          // TODO change Name
+          'Dear Dr. Xue Chen this website is my application',
+          style: TextStyle(fontFamily: 'CH', fontSize: 13, color: Colors.white, fontWeight: FontWeight.w200),
         ),
-        _title('Welcome to the application'),
-        _title('of Lenny Kossyk for'),
-        _title('Development of magnetic self-folding robots'),
-        columnSpacing,
-        TextTransform(
-          maxHeight: 100,
-          controller: controller,
-          textOpacityAnimation: textOpacityAnimation,
-          //textRevealAnimation: textRevealAnimation,
-          child: const Text(
-            // TODO change Name
-            'Dear Prof Mrs. Yang this website is my application',
-            style: TextStyle(fontFamily: 'CH', fontSize: 13, color: Colors.white, fontWeight: FontWeight.w200),
-          ),
-        ),
-        columnSpacing,
-        columnSpacing,
-        Flex(
-          direction: Axis.horizontal,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            _button('List of courses', 0),
-            rowSpacing,
-            _button('Motivation letter', 1),
-            rowSpacing,
-            _button('Curriculum vitae', 2),
-            rowSpacing,
-            _button('Transcript of records', 3),
-          ],
-        ),
-        sectionSpacing
-      ],
-    );
+      ),
+      /**/
+      columnSpacing,
+      columnSpacing,
+      Flex(
+        direction: Axis.horizontal,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          _button('List of courses', 0),
+          rowSpacing,
+          _button('Motivation letter', 1),
+          rowSpacing,
+          _button('Curriculum vitae', 2),
+          rowSpacing,
+          _button('Transcript of records', 3),
+        ],
+      ),
+      sectionSpacing
+    ]);
   }
 
   Widget _title(String text) => TitleWidget(
