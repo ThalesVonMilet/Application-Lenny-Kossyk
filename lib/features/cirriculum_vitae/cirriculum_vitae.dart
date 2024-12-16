@@ -1,8 +1,8 @@
 // Flutter imports:
-import 'package:flutter/material.dart';
-
 // Project imports:
 import 'package:crypto_ui_web/common/widget/bottom_line.dart';
+import 'package:flutter/material.dart';
+
 import '../../common/constant/spaceing.dart';
 import '../../common/widget/long_text_block.dart';
 import '../../common/widget/subtitle_widget.dart';
@@ -56,45 +56,76 @@ class _CurriculumVitaeState extends State<CurriculumVitae> {
                         'Abitur average: 2.4'),
                     spaceUndernethSection,
                     _title('Higher education'),
-                    _subtitle('Current Studies'),
-                    _longText('Nuremberg Technical University (since 2023): Energy process technology\n'
-                        'Friedrich Alexander University (2022 - 2023): Energy technology'),
+                    _subtitle('Friedrich Alexander University \n(2022 - 2023):'),
+                    _longText('Energy technology\n'),
+                    _subtitle('Nuremberg Technical University \n(since 2023):'),
+                    _longText('Energy process technology\n'),
                     spaceUndernethSection,
                     _title('Previous professional experience'),
-                    _subtitle('Working student positions'),
-                    _longText('City Hunters (October 2022 - May 2023): Lead developer of a mobile Flutter application focused on geocaching\n'
-                        'Heitec Innovations (since April 2024): Lead developer of a mobile Flutter application focused on energy data visualization'),
-                    spaceUndernethSection,
-                    _subtitle('Internships'),
-                    _longText('Astrum IT (February - March 2022): Developed a mobile Flutter application as an internship project\n'
-                        'Working student at Astrum IT (April - August 2022): Frontend implementation, documentation, and program maintenance'),
-                    spaceUndernethSection,
-                    _title('IT knowledge'),
-                    _longText('Fullstack App Development (since 2021): Flutter (Dart)\n'
-                        'Java\n'
-                        'C#'),
-                    spaceUndernethSection,
-                    _title('Language skills'),
-                    _longText('English (C1)\n'
-                        'German (native speaker)'),
-                    spaceUndernethSection,
-                    _title('Interests'),
-                    _longText('Cooking\n'
-                        'Handball\n'
-                        'Volleyball\n'
-                        'Windsurfing\n'
-                        'Gardening\n'
-                        'Philosophy\n'
-                        'History'),
+                    _subtitle('Internships Astrum IT \n(February - March 2022):'),
+                    _longText('Developed a mobile Flutter application as an internship project\n'),
+                    _subtitle('Working student at Astrum IT \n(April - August 2022):'),
+                    _longText('Frontend implementation, documentation, and program maintenance\n'),
+                    _subtitle('Working student City Hunters \n(October 2022 - May 2023):'),
+                    _longText('Lead developer of a mobile Flutter application focused on geocaching\n'),
+                    _subtitle('Working student Heitec Innovations \n(since April 2024):'),
+                    _longText('Lead developer of a mobile Flutter application focused on energy data visualization\n'),
                     spaceUndernethSection,
                     _title('Educational achievements'),
                     _longText('1st sponsorship award from the Association for the History of the City of Nuremberg (2021):\n'
                         'For scientific seminar thesis on political views and social stratification based on student essays from 1946\n\n'
                         'Deutschlandstipendium (since 2024)'),
                     spaceUndernethSection,
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          _card([
+                            _title('IT knowledge'),
+                            _longText('Fullstack \nApp Development\n(since 2021): \nFlutter (Dart)\n'
+                                'Java\n'
+                                'C#'),
+                          ]),
+                          rowSpacing,
+                          _card([
+                            _title('Language skills'),
+                            _longText('English (C1)\n'
+                                'German (native speaker)'),
+                          ]),
+                          rowSpacing,
+                          _card([
+                            _title('Interests'),
+                            _longText('Cooking\n'
+                                'Handball\n'
+                                'Volleyball\n'
+                                'Windsurfing\n'
+                                'Gardening\n'
+                                'Philosophy\n'
+                                'History'),
+                          ])
+                        ],
+                      ),
+                    ),
+                    spaceUndernethSection,
                   ])),
           BottomLine()
         ]);
+  }
+
+  Widget _card(List<Widget> list) {
+    return Card(
+      color: Colors.grey.shade600,
+      elevation: 0.0,
+      child: Padding(
+        padding: EdgeInsets.all(26.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: list,
+        ),
+      ),
+    );
   }
 }
 

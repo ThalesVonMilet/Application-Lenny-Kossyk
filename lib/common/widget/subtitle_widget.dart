@@ -23,7 +23,7 @@ class _SubtitleWidgetState extends State<SubtitleWidget> {
   Widget build(BuildContext context) {
 
     return TextReveal(
-      maxHeight: 50,
+      maxHeight: 100,
       child: Text(
         widget.text,
         style: const TextStyle(
