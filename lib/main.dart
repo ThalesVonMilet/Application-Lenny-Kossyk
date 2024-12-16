@@ -9,10 +9,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 // Project imports:
 import 'cirriculum_vitae/cirriculum_vitae.dart';
 import 'common/constant/color.dart';
+import 'common/widget/heading.dart';
 import 'controller.dart';
 import 'list_of_courses/list_of_courses.dart';
 import 'motivation_letter/motivation_letter.dart';
-import 'common/widget/heading.dart';
 
 void main() {
   runApp(

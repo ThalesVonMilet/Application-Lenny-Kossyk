@@ -8,8 +8,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
 import 'package:crypto_ui_web/controller.dart';
-import 'button_widget.dart';
 import '../constant/spaceing.dart';
+import 'button_widget.dart';
 import 'text_transform.dart';
 import 'title_widget.dart';
 

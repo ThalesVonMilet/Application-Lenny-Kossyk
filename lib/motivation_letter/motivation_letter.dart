@@ -1,10 +1,11 @@
 // Flutter imports:
-// Project imports:
-import 'package:crypto_ui_web/common/widget/bottom_line.dart';
 import 'package:flutter/material.dart';
+
 // Package imports:
 import 'package:gif/gif.dart';
 
+// Project imports:
+import 'package:crypto_ui_web/common/widget/bottom_line.dart';
 import '../common/constant/spaceing.dart';
 import '../common/widget/gif_widget.dart';
 import '../common/widget/long_text_block.dart';
