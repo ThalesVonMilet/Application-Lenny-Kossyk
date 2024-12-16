@@ -8,10 +8,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
 import 'package:crypto_ui_web/controller.dart';
-import '../../common/widget/button_widget.dart';
-import '../../common/widget/spaceing.dart';
-import '../../common/widget/text_transform.dart';
-import '../../common/widget/title_widget.dart';
+import 'button_widget.dart';
+import '../constant/spaceing.dart';
+import 'text_transform.dart';
+import 'title_widget.dart';
 
 class Heading extends ConsumerStatefulWidget {
   const Heading({super.key});

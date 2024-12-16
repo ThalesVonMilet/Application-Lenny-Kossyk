@@ -7,12 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import 'package:crypto_ui_web/constant/color.dart';
 import 'cirriculum_vitae/cirriculum_vitae.dart';
+import 'common/constant/color.dart';
 import 'controller.dart';
 import 'list_of_courses/list_of_courses.dart';
 import 'motivation_letter/motivation_letter.dart';
-import 'motivation_letter/sections/heading.dart';
+import 'common/widget/heading.dart';
 
 void main() {
   runApp(
