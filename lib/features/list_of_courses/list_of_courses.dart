@@ -150,8 +150,8 @@ class _CurriculumVitaeState extends State<ListOfCourses> {
                     '- Analyze material behavior under different forces'),
               ])
         ),
-        spaceUndernethSection,
-        spaceUndernethSection,
+        spaceUnderneathSection,
+        spaceUnderneathSection,
         BottomLine(),
       ],
     );

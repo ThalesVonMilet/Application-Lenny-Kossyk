@@ -71,11 +71,10 @@ class _CurriculumVitaeState extends State<CurriculumVitae> {
                     _subtitle('Working student Heitec Innovations \n(since April 2024):'),
                     _longText('Lead developer of a mobile Flutter application focused on energy data visualization\n'),
                     spaceUndernethSection,
-                    _title('List of achievements'),
+                    _title('Educational achievements'),
                     _longText('1st sponsorship award from the Association for the History of the City of Nuremberg (2021):\n'
                         'For scientific seminar thesis on political views and social stratification based on student essays from 1946\n\n'
-                        'Completion of the Existency Building Box Program with my startup,\n a government-funded initiative designed to teach startups essential skills for building a successful business\n\n'
-                        'Deutschlandstipendium, a scholarship of the state of Germany (since 2024)\n'),
+                        'Deutschlandstipendium (since 2024)'),
                     spaceUndernethSection,
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,

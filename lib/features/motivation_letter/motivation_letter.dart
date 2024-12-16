@@ -85,7 +85,7 @@ class _MotivationLetterState extends State<MotivationLetter> with TickerProvider
                         '\n'
                         'My enthusiasm for sciences stems from their ability to turn ideas into impactful realities. For me, engineering is the ideal path to create meaningful changes in our society —combining creativity, analytical thinking, and practical application to improve lives and push the boundaries of what is possible. I think a perfect project, that exactly shows what I aspire, is your innovation on folding robots. Their compact, self-assembling design makes them ideal for space missions, where space and weight efficiency are critical. But not only that, they could be used for underwater research or in general for tough environments where current robots fail.',
                   ),
-                  spaceUndernethSection,
+                  spaceUnderneathSection,
                   GifWidget(controller: _gifController),
                   spaceAboveSection,
                   _title('Why would I be a good fit for this project ?'),
@@ -108,7 +108,7 @@ class _MotivationLetterState extends State<MotivationLetter> with TickerProvider
                   _subtitle('Software Developer:'),
                   _longText(
                       'Over the past three years, I have worked as a full-stack app developer and co-founded a startup, where I led the development efforts for 1.5 years. This experience has enhanced my ability to solve problems independently, collaborate effectively within teams, and manage projects with precision-skills that are essential for success in any collaborative environment.'),
-                  spaceUndernethSection,
+                  spaceUnderneathSection,
                   GifWidget(controller: _gifController),
                   const SizedBox(
                     height: 10,
@@ -131,9 +131,9 @@ class _MotivationLetterState extends State<MotivationLetter> with TickerProvider
                   LongTextBlockWidget(
                       text: 'Sincerely,\n\n'
                           'Lenny Kossyk'),
-                  spaceUndernethSection,
+                  spaceUnderneathSection,
                   GifWidget(controller: _gifController),
-                  spaceUndernethSection,
+                  spaceUnderneathSection,
                 ])),
         const BottomLine()
       ],

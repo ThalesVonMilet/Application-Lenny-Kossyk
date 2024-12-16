@@ -17,6 +17,6 @@ Widget spaceAboveSection = const SizedBox(
   height: 60,
 );
 
-Widget spaceUndernethSection = const SizedBox(
+Widget spaceUnderneathSection = const SizedBox(
   height: 70,
 );
