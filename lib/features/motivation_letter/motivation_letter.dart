@@ -1,11 +1,10 @@
 // Flutter imports:
+// Project imports:
+import 'package:crypto_ui_web/common/widget/bottom_line.dart';
 import 'package:flutter/material.dart';
-
 // Package imports:
 import 'package:gif/gif.dart';
 
-// Project imports:
-import 'package:crypto_ui_web/common/widget/bottom_line.dart';
 import '../../common/constant/spaceing.dart';
 import '../../common/widget/gif_widget.dart';
 import '../../common/widget/long_text_block.dart';
@@ -30,23 +29,19 @@ class _MotivationLetterState extends State<MotivationLetter> with TickerProvider
     _scrollController = widget.scrollController;
     _gifController = GifController(vsync: this);
 
-    _scrollController.addListener(() {
-      if (_scrollController.position.pixels == 0) {
-        _gifController.value = 0;
-      } else {
-        double value =
-            (_gifController.upperBound - _gifController.lowerBound) * _scrollController.position.pixels / _scrollController.position.maxScrollExtent;
-
-        _gifController.value = value.abs();
-      }
-    });
+    _scrollController.addListener(_scrollControllerListener);
     super.initState();
   }
 
-  @override
-  void dispose() {
-    _gifController.dispose();
-    super.dispose();
+  _scrollControllerListener() {
+    if (_scrollController.position.pixels == 0) {
+      _gifController.value = 0;
+    } else {
+      double value =
+          (_gifController.upperBound - _gifController.lowerBound) * _scrollController.position.pixels / _scrollController.position.maxScrollExtent;
+
+      _gifController.value = value.abs();
+    }
   }
 
   @override
@@ -143,6 +138,13 @@ class _MotivationLetterState extends State<MotivationLetter> with TickerProvider
         const BottomLine()
       ],
     );
+  }
+
+  @override
+  void dispose() {
+    _scrollController.removeListener(_scrollControllerListener);
+    _gifController.dispose();
+    super.dispose();
   }
 
   Widget _title(String text) => TitleWidget(

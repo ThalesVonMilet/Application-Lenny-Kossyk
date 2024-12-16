@@ -1,33 +1,30 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
-
 // Package imports:
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
-class TextReveal extends ConsumerStatefulWidget {
+class TextReveal extends StatefulWidget {
   final double maxHeight;
   final Widget child;
-  final Animation<double>? textRevealAnimation;
-  final Animation<double>? textOpacityAnimation;
 
-  const TextReveal({super.key, required this.maxHeight, required this.child, this.textRevealAnimation, this.textOpacityAnimation});
+  const TextReveal({super.key, required this.maxHeight, required this.child});
 
   @override
-  ConsumerState<TextReveal> createState() => _TextRevealState();
+  State<TextReveal> createState() => _TextRevealState();
 }
 
-class _TextRevealState extends ConsumerState<TextReveal> with SingleTickerProviderStateMixin {
-  late AnimationController controller;
-  late Animation<double> textRevealAnimation;
-  late Animation<double> textOpacityAnimation;
+class _TextRevealState extends State<TextReveal> with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  bool _controllerIsDisposed = false;
 
-  final listViewKey = GlobalKey();
-  final animatedBoxKey = GlobalKey();
+  late Animation<double> _textRevealAnimation;
+  late Animation<double> _textOpacityAnimation;
+
+  final _animatedBoxKey = GlobalKey();
 
   @override
   void initState() {
-    controller = AnimationController(
+    _controller = AnimationController(
       vsync: this,
       duration: const Duration(
         milliseconds: 1700,
@@ -37,9 +34,8 @@ class _TextRevealState extends ConsumerState<TextReveal> with SingleTickerProvid
       ),
     );
 
-    textRevealAnimation = Tween<double>(begin: 100.0, end: 0.0).animate(CurvedAnimation(parent: controller, curve: Curves.easeOut));
-
-    textOpacityAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(parent: controller, curve: Curves.easeOut));
+    _textRevealAnimation = Tween<double>(begin: 100.0, end: 0.0).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
+    _textOpacityAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
 
     super.initState();
   }
@@ -47,26 +43,34 @@ class _TextRevealState extends ConsumerState<TextReveal> with SingleTickerProvid
   @override
   Widget build(BuildContext context) {
     return VisibilityDetector(
-        key: ValueKey(controller.toString()),
+        key: ValueKey(_controller.toString()),
         onVisibilityChanged: (visible) {
+          if (_controllerIsDisposed) return;
           if (visible.visibleBounds == Rect.zero) {
-            controller.reverse();
+            _controller.reverse();
           } else {
-            controller.forward();
+            _controller.forward();
           }
         },
         child: AnimatedBuilder(
-            animation: textRevealAnimation,
+            animation: _textRevealAnimation,
             builder: (context, child) {
               return LimitedBox(
                   maxHeight: widget.maxHeight,
                   child: Container(
-                      key: animatedBoxKey,
-                      padding: EdgeInsets.only(top: textRevealAnimation.value),
+                      key: _animatedBoxKey,
+                      padding: EdgeInsets.only(top: _textRevealAnimation.value),
                       child: FadeTransition(
-                        opacity: textOpacityAnimation,
+                        opacity: _textOpacityAnimation,
                         child: widget.child,
                       )));
             }));
+  }
+
+  @override
+  void dispose() {
+    _controllerIsDisposed = true;
+    _controller.dispose();
+    super.dispose();
   }
 }

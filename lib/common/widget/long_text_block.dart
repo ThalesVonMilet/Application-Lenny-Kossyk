@@ -1,6 +1,5 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
-
 // Package imports:
 import 'package:visibility_detector/visibility_detector.dart';
 
@@ -16,13 +15,15 @@ class LongTextBlockWidget extends StatefulWidget {
   State<LongTextBlockWidget> createState() => _LongTextBlockWidgetState();
 }
 
-class _LongTextBlockWidgetState extends State<LongTextBlockWidget> with TickerProviderStateMixin {
-  late AnimationController controller;
-  late Animation<Offset> transform;
+class _LongTextBlockWidgetState extends State<LongTextBlockWidget> with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  bool _controllerIsDisposed = false;
+
+  late Animation<Offset> _transform;
 
   @override
   void initState() {
-    controller = AnimationController(
+    _controller = AnimationController(
       vsync: this,
       duration: const Duration(
         milliseconds: 1700,
@@ -32,16 +33,8 @@ class _LongTextBlockWidgetState extends State<LongTextBlockWidget> with TickerPr
       ),
     );
 
-    transform = Tween<Offset>(begin: const Offset(10, 0), end: const Offset(0, 0)).animate(CurvedAnimation(parent: controller, curve: Curves.ease));
+    _transform = Tween<Offset>(begin: const Offset(10, 0), end: const Offset(0, 0)).animate(CurvedAnimation(parent: _controller, curve: Curves.ease));
     super.initState();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    // TODO: implement dispose
-    controller.stop();
-    controller.dispose();
   }
 
   @override
@@ -49,14 +42,15 @@ class _LongTextBlockWidgetState extends State<LongTextBlockWidget> with TickerPr
     return VisibilityDetector(
       key: ValueKey(widget.text),
       onVisibilityChanged: (visible) {
+        if (_controllerIsDisposed) return;
         if (visible.visibleBounds == Rect.zero) {
-          controller.reverse();
+          _controller.reverse();
         } else {
-          controller.forward();
+          _controller.forward();
         }
       },
       child: SlideTransition(
-          position: transform,
+          position: _transform,
           // opacity: subTextOpacityAnimation,
           child: Text(widget.text,
               style: const TextStyle(
@@ -66,5 +60,12 @@ class _LongTextBlockWidgetState extends State<LongTextBlockWidget> with TickerPr
                 fontWeight: FontWeight.w200,
               ))),
     );
+  }
+
+  @override
+  void dispose() {
+    _controllerIsDisposed = true;
+    _controller.dispose();
+    super.dispose();
   }
 }

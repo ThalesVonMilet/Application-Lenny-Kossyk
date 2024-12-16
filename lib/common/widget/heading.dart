@@ -21,14 +21,14 @@ class Heading extends ConsumerStatefulWidget {
 }
 
 class _FirstSectionState extends ConsumerState<Heading> with SingleTickerProviderStateMixin {
-  late AnimationController controller;
-  late Animation<double> textOpacityAnimation;
+  late AnimationController _controller;
+  late Animation<double> _textOpacityAnimation;
 
   late int _currentTabIndex = ref.read(tabStateProvider);
 
   @override
   void initState() {
-    controller = AnimationController(
+    _controller = AnimationController(
       vsync: this,
       duration: const Duration(
         milliseconds: 1700,
@@ -38,20 +38,15 @@ class _FirstSectionState extends ConsumerState<Heading> with SingleTickerProvide
       ),
     );
 
-    textOpacityAnimation =
-        Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(parent: controller, curve: const Interval(0.0, 0.3, curve: Curves.easeOut)));
+    _textOpacityAnimation =
+        Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(parent: _controller, curve: const Interval(0.0, 0.3, curve: Curves.easeOut)));
     Future.delayed(const Duration(milliseconds: 1000), () {
-      controller.forward();
+      _controller.forward();
     });
 
     super.initState();
   }
 
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,8 +62,8 @@ class _FirstSectionState extends ConsumerState<Heading> with SingleTickerProvide
       columnSpacing,
       TextTransform(
         maxHeight: 100,
-        controller: controller,
-        textOpacityAnimation: textOpacityAnimation,
+        controller: _controller,
+        textOpacityAnimation: _textOpacityAnimation,
         //textRevealAnimation: textRevealAnimation,
         child: const Text(
           // TODO change Name
@@ -88,12 +83,16 @@ class _FirstSectionState extends ConsumerState<Heading> with SingleTickerProvide
           _button('Motivation letter', 1),
           rowSpacing,
           _button('Curriculum vitae', 2),
-          rowSpacing,
-          _button('Transcript of records', 3),
         ],
       ),
       sectionSpacing
     ]);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 
   Widget _title(String text) => TitleWidget(

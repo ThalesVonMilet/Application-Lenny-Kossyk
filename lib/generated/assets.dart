@@ -2,15 +2,14 @@
 class Assets {
   Assets._();
 
-  static const String assetsImages3d = 'assets/images/3d.glb';
   static const String fontsClashDisplayBold = 'assets/fonts/ClashDisplay-Bold.ttf';
   static const String fontsClashDisplayExtralight = 'assets/fonts/ClashDisplay-Extralight.ttf';
   static const String fontsClashDisplayLight = 'assets/fonts/ClashDisplay-Light.ttf';
   static const String fontsClashDisplayMedium = 'assets/fonts/ClashDisplay-Medium.ttf';
   static const String fontsClashDisplayRegular = 'assets/fonts/ClashDisplay-Regular.ttf';
   static const String fontsClashDisplaySemibold = 'assets/fonts/ClashDisplay-Semibold.ttf';
-  static const String iconIcon = 'assets/images/icon/icon.jpg';
+  static const String iconIcon = 'assets/images/icon/icon.png';
   static const String images3d = 'assets/images/3d.glb';
-  static const String imagesLamp7 = 'assets/images/lamp7.gif';
+  static const String imagesOrigami = 'assets/images/origami.gif';
 
 }

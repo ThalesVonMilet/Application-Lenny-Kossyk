@@ -73,7 +73,6 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
               )
             ],
             [CurriculumVitae()],
-            [],
           ][ref.watch(tabStateProvider)],
         ]));
   }
