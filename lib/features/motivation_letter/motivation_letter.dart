@@ -74,7 +74,6 @@ class _MotivationLetterState extends State<MotivationLetter> with TickerProvider
                       )
                     ],
                   ),
-                  spaceAboveSection,
                   TitleWidget(
                     padding: EdgeInsets.only(bottom: 26),
                     text: 'What motivates me',
@@ -85,7 +84,9 @@ class _MotivationLetterState extends State<MotivationLetter> with TickerProvider
                           '\n\n'
                           'My enthusiasm for sciences stems from their ability to turn ideas into impactful realities. For me, engineering is the ideal path to create meaningful changes in our society —combining creativity, analytical thinking, and practical application to improve lives and push the boundaries of what is possible. I think a perfect project, that exactly shows what I aspire, is your innovation on Augmented reality lab applications. AR has the potential to significantly enhance how medical students learn by allowing them to interact with 3D models of organs, tissues, and other structures. This deeper, more interactive visualization helps students better understand anatomy and the complexities of the human body, improving their knowledge and decision-making in clinical settings. What excites me most is the potential for AR to expand beyond education and be used in surgical training, allowing students and doctors to practice procedures on virtual representations of real patients before performing them in the operating room. As well as for looking at magnetic resonance imaging in 3D directly so the doctor can locate problems even faster and better. This allows people to be treated more effectively, enabling them to return to enjoying their lives more quickly.'),
                   spaceUnderneathSection,
+                  spaceUnderneathSection,
                   GifWidget(controller: _gifController),
+                  spaceAboveSection,
                   spaceAboveSection,
                   _title('Why would I be a good fit for this project ?'),
                   _longText('My diverse skill set and practical experience make me a strong candidate. For instance:'),
@@ -102,10 +103,14 @@ class _MotivationLetterState extends State<MotivationLetter> with TickerProvider
                   _longText(
                       'Over the past three years, I have worked as a full-stack app developer and co-founded a startup, where I led the development efforts for 1.5 years. This experience has enhanced my ability to solve problems independently, collaborate effectively within teams, and manage projects with precision-skills that are essential for success in any collaborative environment'),
                   spaceUnderneathSection,
+                  spaceUnderneathSection,
+                  spaceUnderneathSection,
                   GifWidget(controller: _gifController),
                   const SizedBox(
                     height: 10,
                   ),
+                  spaceAboveSection,
+                  spaceAboveSection,
                   TitleWidget(text: 'My plans for the future'),
                   const SizedBox(
                     height: 30,
@@ -124,8 +129,12 @@ class _MotivationLetterState extends State<MotivationLetter> with TickerProvider
                       text: 'Sincerely,\n\n'
                           'Lenny Kossyk'),
                   spaceUnderneathSection,
-                  GifWidget(controller: _gifController),
                   spaceUnderneathSection,
+                  spaceUnderneathSection,
+                  GifWidget(controller: _gifController),
+                  spaceAboveSection,
+                  spaceAboveSection,
+                  spaceAboveSection,
                 ])),
         const BottomLine()
       ],
