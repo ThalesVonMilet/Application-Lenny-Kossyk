@@ -1,5 +1,6 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 // Project imports:
 import '../constant/color.dart';
@@ -27,11 +28,13 @@ class _BottomLineState extends State<BottomLine> {
       child: Column(
         children: [
           columnSpacing,
-          const Row(
+           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              ButtonWidget(text: "Visit the code on GitHub"),
+              ButtonWidget(text: "Visit my LinkedIn",onPressed: () {
+                _launchUrl();
+              },),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -75,5 +78,12 @@ class _BottomLineState extends State<BottomLine> {
         ],
       ),
     );
+  }
+
+  final Uri _url = Uri.parse('https://www.linkedin.com/in/lenny-kossyk-2a2033234?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app');
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_url)) {
+    }
   }
 }
