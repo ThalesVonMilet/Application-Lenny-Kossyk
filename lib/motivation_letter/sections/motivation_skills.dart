@@ -1,14 +1,16 @@
 // Flutter imports:
-// Project imports:
-import 'package:crypto_ui_web/motivation_letter/widget/long_text_block.dart';
-import 'package:crypto_ui_web/motivation_letter/widget/spaceing.dart';
-import 'package:crypto_ui_web/motivation_letter/widget/subtitle_widget.dart';
+
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// Project imports:
+import '../../common/widget/long_text_block.dart';
+import '../../common/widget/spaceing.dart';
+import '../../common/widget/subtitle_widget.dart';
+import '../../common/widget/title_widget.dart';
 
 // Package imports:
 
-import '../widget/title_widget.dart';
 
 class MotivationSkills extends StatefulWidget {
   const MotivationSkills({super.key});

@@ -1,21 +1,24 @@
-import 'package:crypto_ui_web/motivation_letter/widget/text_reveal.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:visibility_detector/visibility_detector.dart';
 
-class HeadingWidget extends StatefulWidget {
-  const HeadingWidget(
+// Project imports:
+import 'package:crypto_ui_web/common/widget/text_reveal.dart';
+
+// Project imports:
+
+class SubtitleWidget extends StatefulWidget {
+  const SubtitleWidget(
       {super.key,
         required this.text,
-        this.padding});
+      });
 
-  final EdgeInsets? padding;
   final String text;
 
   @override
-  State<HeadingWidget> createState() => _HeadingWidgetState();
+  State<SubtitleWidget> createState() => _SubtitleWidgetState();
 }
 
-class _HeadingWidgetState extends State<HeadingWidget> {
+class _SubtitleWidgetState extends State<SubtitleWidget> {
   @override
   Widget build(BuildContext context) {
 
@@ -24,7 +27,7 @@ class _HeadingWidgetState extends State<HeadingWidget> {
       child: Text(
         widget.text,
         style: const TextStyle(
-          fontSize: 18,
+          fontSize: 22,
           fontFamily: 'CH',
           fontWeight: FontWeight.bold,
           color: Colors.white,

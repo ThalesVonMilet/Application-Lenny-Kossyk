@@ -1,13 +1,14 @@
 // Flutter imports:
-import 'package:crypto_ui_web/motivation_letter/widget/spaceing.dart';
 import 'package:flutter/material.dart';
+
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import '../motivation_letter/widget/long_text_block.dart';
-import '../motivation_letter/widget/subtitle_widget.dart';
-import '../motivation_letter/widget/title_widget.dart';
+import '../../common/widget/long_text_block.dart';
+import '../../common/widget/spaceing.dart';
+import '../../common/widget/subtitle_widget.dart';
+import '../../common/widget/title_widget.dart';
 
 class CurriculumVitae extends ConsumerStatefulWidget {
   const CurriculumVitae({super.key});

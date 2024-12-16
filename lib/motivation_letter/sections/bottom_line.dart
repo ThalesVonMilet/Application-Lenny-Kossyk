@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 
 // Project imports:
 import 'package:crypto_ui_web/constant/color.dart';
-
-import '../widget/button_widget.dart';
-import '../widget/spaceing.dart';
+import '../../common/widget/button_widget.dart';
+import '../../common/widget/spaceing.dart';
 
 class BottomLine extends StatefulWidget {
   const BottomLine({super.key});

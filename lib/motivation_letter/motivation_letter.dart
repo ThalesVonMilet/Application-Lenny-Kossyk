@@ -1,16 +1,16 @@
 // Flutter imports:
-import 'package:crypto_ui_web/motivation_letter/sections/bottom_line.dart';
-import 'package:crypto_ui_web/motivation_letter/sections/motivation_future.dart';
-import 'package:crypto_ui_web/motivation_letter/sections/motivation_introduction.dart';
-import 'package:crypto_ui_web/motivation_letter/sections/motivation_skills.dart';
-import 'package:crypto_ui_web/motivation_letter/widget/gif_widget.dart';
-import 'package:crypto_ui_web/motivation_letter/widget/spaceing.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:gif/gif.dart';
 
-
+// Project imports:
+import 'package:crypto_ui_web/motivation_letter/sections/bottom_line.dart';
+import 'package:crypto_ui_web/motivation_letter/sections/motivation_future.dart';
+import 'package:crypto_ui_web/motivation_letter/sections/motivation_introduction.dart';
+import 'package:crypto_ui_web/motivation_letter/sections/motivation_skills.dart';
+import '../common/widget/gif_widget.dart';
+import '../common/widget/spaceing.dart';
 
 class MotivationLetter extends StatefulWidget {
   const MotivationLetter({super.key, required this.scrollController});

@@ -1,12 +1,14 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
+
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../motivation_letter/widget/heading_widget.dart';
-import '../motivation_letter/widget/long_text_block.dart';
-import '../motivation_letter/widget/subtitle_widget.dart';
-import '../motivation_letter/widget/title_widget.dart';
+// Project imports:
+import '../../common/widget/long_text_block.dart';
+import '../../common/widget/subtitle_widget.dart';
+import '../../common/widget/title_widget.dart';
+import '../common/widget/heading_widget.dart';
 
 class ListOfCourses extends ConsumerStatefulWidget {
   const ListOfCourses({super.key});

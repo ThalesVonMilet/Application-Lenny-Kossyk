@@ -1,6 +1,7 @@
-import 'package:crypto_ui_web/motivation_letter/widget/text_reveal.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
 
+// Project imports:
 import '../../constant/color.dart';
 
 class ButtonWidget extends StatefulWidget {

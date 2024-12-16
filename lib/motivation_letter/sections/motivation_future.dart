@@ -1,12 +1,15 @@
 // Flutter imports:
-// Project imports:
-import 'package:crypto_ui_web/motivation_letter/widget/long_text_block.dart';
-import 'package:crypto_ui_web/motivation_letter/widget/spaceing.dart';
+
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
+import '../../common/widget/long_text_block.dart';
+import '../../common/widget/spaceing.dart';
+import '../../common/widget/title_widget.dart';
 
 // Package imports:
 
-import '../widget/title_widget.dart';
 
 class MotivationFuture extends StatefulWidget {
   const MotivationFuture({super.key});

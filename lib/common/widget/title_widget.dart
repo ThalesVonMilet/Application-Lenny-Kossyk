@@ -1,6 +1,10 @@
-import 'package:crypto_ui_web/motivation_letter/widget/text_reveal.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:visibility_detector/visibility_detector.dart';
+
+// Project imports:
+import 'package:crypto_ui_web/common/widget/text_reveal.dart';
+
+// Project imports:
 
 class TitleWidget extends StatefulWidget {
   const TitleWidget(
