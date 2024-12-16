@@ -31,6 +31,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.white,
+          dynamicSchemeVariant: DynamicSchemeVariant.fidelity,
+        ),
         useMaterial3: true,
         //textTheme: GoogleFonts.robotoCondensedTextTheme(),
       ),
